@@ -1,0 +1,241 @@
+header{
+    position: relative;
+}
+#logo-container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+#logo{
+    vertical-align: middle;
+    width:8em;
+    padding:1em;
+}
+
+#menu{
+    display:inline-block;
+    position: relative;
+    height:4.5em;
+    margin:0;
+    padding-left:0;
+}
+li{
+    list-style: none;
+    display:inline-block;
+    padding-top:1.6em;
+}
+li a{
+    position: relative;
+    display: inline-block;
+    font-size: 1.13rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    padding:0 1.45rem;
+    z-index: 1;
+}
+
+#submenu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out; /* Thêm hiệu ứng chuyển đổi */
+    position: absolute;
+    top: 100%; /* Đặt submenu nằm ngay dưới mục "Watch" */
+    left: 6.5em;
+    width: 30%;
+    background-color: #222222; /* Màu nền */
+    padding-left:0;
+}
+
+#menu li:nth-child(2):hover #submenu {
+    max-height: 300px; /* Khi hover vào mục cha, hiển thị submenu */
+}
+
+#submenu li {
+    display: block;
+    padding-top:10px;
+}
+
+#submenu li a {
+    display: block;
+    padding:10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền khi hover */
+}
+
+#submenu li a:hover {
+    background-color: #333333; /* Màu nền khi hover */
+}
+#submenu li:first-child a{
+    text-decoration: none;
+}
+nav{
+    position:fixed;
+    width:100%;
+    height:4.5rem;
+    background-color: #222222;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index:10;
+}
+
+#menu li:first-child:hover~span {
+    width:4.5em;
+    left: 0.5em;
+}
+
+#menu li:nth-child(2):hover~span {
+    width:4.5em;
+    left: 6.5em;
+}
+
+#menu li:nth-child(3):hover~span {
+    left: 12.2em;
+    width:4.5em;
+}
+
+#menu li:nth-child(4):hover~span {
+    width:5em;
+    left: 18.3em;
+}
+
+#menu li:nth-child(5):hover~span {
+    width:6em;
+    left: 25.2em;
+}
+#log-sign{
+    display:inline-block;
+    position: absolute;
+    top:50%;
+    right:0;
+    transform: translate(-40%,-50%);
+}
+button{
+    border-radius: 10px;
+    height:35px;
+    background-color: transparent;
+    border:1px solid #33adff;
+}
+button a{
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color:white;
+    padding:10px;
+}
+button:hover{
+    background-color: #189ffa; 
+
+}
+#check {
+    display: none;
+}
+.checkbtn {
+    font-size: 4vw;
+    color: white;
+    float: right;
+    line-height: 75px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+/* Smartphone */
+@media screen and (max-width:767px){
+    li a{
+        font-size:13px;
+    }
+    button{
+        height:25px;
+        width:65px;
+    }
+    button a{
+        font-size:10px;
+    }
+    #logo-container{
+        left:0;
+        transform: translate(0,-50%);
+
+    }
+    #logo{
+        width:4em;
+    }
+    #log-sign{
+        right:-1rem;
+    }
+    header{
+        height:30px;
+    }
+}
+/* Tablet */
+@media screen and (max-width:1070px) {
+    #check:checked~ul {
+        left: 0;
+    }
+    .checkbtn {
+        display: block;
+    }
+    #menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        text-align: center;
+        transition: all .5s;
+        display:block;
+        background-color: #222222;
+    }
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    nav span{
+        position:absolute;
+        top:25px;
+        left:0;
+        width:100%;
+        height:70px;       
+        border-radius: 0;
+        background: linear-gradient(45deg, #3466ff43,#6ac4fc43);
+        transition:0s !important;
+    }
+    #menu li:first-child:hover~span {
+        left: 0;
+        width:100%;
+    }
+    #menu li:nth-child(2):hover~span {
+        left: 50%;
+        top:100px;
+        width:100%;
+    }
+    
+    #menu li:nth-child(3):hover~span {
+        left: 50%;
+        top:180px;
+        width:100%;
+    }
+    
+    #menu li:nth-child(4):hover~span {
+        left: 50%;
+        top:255px;
+        width:100%;
+
+    }
+    
+    #menu li:nth-child(5):hover~span {
+        width:100%;
+        left: 50%;
+        top:330px;
+    }
+    #logo{
+        width:6em;
+    }
+    #log-sign{
+        right:-0.3rem;
+    }
+}
+

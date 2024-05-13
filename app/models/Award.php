@@ -1,8 +1,14 @@
 <?php
     require_once '../../config/database.php';
-    $sql = "SELECT * FROM awards";
-    $result1 = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_assoc($result1)) {
-        echo $row["name"] . '<br>';
+    try{
+        $sql = "SELECT * FROM awards";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            echo $row["name"] . '<br>';
+        }
     }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    } 
 ?>

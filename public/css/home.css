@@ -187,9 +187,9 @@ h1:before {
     background-color: #1C0C0B;
     background-image: url(../../public/images&videos/Home/bg-emotions.png);
     background-size: cover;
-    height:100%;
+    height:80%;
     display:grid;
-    grid-template-columns: 32% 33% 35%;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50vw 50vw 58vw;
 } 
 
@@ -199,7 +199,7 @@ h1:before {
     width: 20vw;
     height: 30vw;
     aspect-ratio: 1/0.7;
-    /* co gang giu ti le khung hinh la 1:0,7 */
+    /* try to keep scale 1:0,7 */
     border-radius: 8px;
     position: relative;
     cursor: pointer;
@@ -210,7 +210,6 @@ h1:before {
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    /* inherit: ke thua thuoc tinh cua phan tu cha gan nhat */
 }
 
 .card .image-box img {
@@ -223,8 +222,7 @@ h1:before {
 .card::after {
     content: "";
     position: absolute;
-    inset: 0;
-    /* tuong duong voi top:0; right:0; bottom:0; left:0*/
+    inset: 0; /* top:0; right:0; bottom:0; left:0*/
     border: 2px solid black;
     opacity: 1;
     transition: 0.4s ease-in-out;
@@ -446,12 +444,33 @@ hr{
     #logo{
         width:4em;
     }
-    #log-sign{
-        right:-1rem;
-    }
     header{
         height:60px;
     }
+
+    /* short-about */
+    #short-about {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    #short-about div {
+        grid-row: auto;
+    }
+
+    #short-about p {
+        width: 80%;
+        margin: 2vw auto;
+        text-align: center;
+    }
+
+    #short-about img {
+        width: 100%;
+        max-width: 600px; 
+        top: 0;
+        right: auto;
+    }
+    
 }
 /* Tablet */
 @media screen and (max-width:1070px) {
@@ -514,10 +533,11 @@ hr{
     #logo{
         width:6em;
     }
-    #log-sign{
-        right:0.5vw;
-    }
     #banner{
         background-image: url("../images&videos/Home/banner-mobile.jpg");
+    } 
+    .card {
+        top:3.5rem;
     }
+
 }

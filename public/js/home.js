@@ -50,8 +50,4 @@ cards.forEach((card,index) => {
     });
     
 });
-// Autoplay short video
-window.addEventListener('load', function() {
-  const video = document.querySelector('video');
-  video.play();
-});
+

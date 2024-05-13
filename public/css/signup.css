@@ -1,0 +1,247 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../images&videos/log-sign.jpg);
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+
+section{
+    position: relative;
+    width:55vw;
+    max-width: 520px;
+    background-color: #222222;
+    border: 2px solid rgb(255, 255, 255,0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px 40px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgb(17, 17, 26) 0px 8px 24px, rgb(17, 17, 26) 0px 16px 48px;
+}
+h1{
+    text-align: center;
+    font-size: 30px;
+    color:white;
+}
+hr{
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+    border-image: initial;
+    border-top: 1px solid grey;
+    width:100%;
+}
+.or-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.or {
+    background-color: #222222; 
+    padding: 0 3px; 
+    position: relative;
+    color:white;
+    z-index: 1; 
+}
+
+.or-container hr {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0; 
+}
+.google-login-btn{
+    margin-top:10px;
+    background-color: transparent;
+    color:white;
+    width:100%;
+    height:45px;
+    border-radius: 10px;
+    outline:none;
+    border:1px solid #33adff;
+    cursor: pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.google-login-btn .icon{
+    margin-right:10px;
+}
+
+.inputbox{
+    position: relative;
+    margin: 23px 0;
+    width:350px;
+    border-bottom: 2px solid #ffffff;
+    background:transparent;
+    margin-bottom: 0;
+}
+.inputbox label{
+    position: absolute;
+    top:50%;
+    left:10px;
+    font-size:17px;
+    transform: translateY(-50%);
+    color:white;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.inputbox input:focus ~ i{
+    color:#33adff;
+}
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label{
+    top:-5px;
+    font-size:13px;
+    color:#33adff;
+}
+.inputbox input{
+    width:100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline:none;
+    padding:0 35px 0 5px;
+    color:#ffffff;
+    font-size:16px;
+    overflow:scroll;
+}
+.inputbox i{
+    position: absolute;
+    right:10px;
+    top:20px;
+    color:rgb(255, 255, 255);
+}
+.fa-regular{
+    cursor: pointer;
+}
+.forget{
+    margin: 35px 0;
+    display:flex;
+    justify-content: space-between;
+}
+.forget label{
+    display: flex;
+    align-items: center;
+    color:white;
+    font-size:14px;
+}
+.forget a{
+    color:rgb(255, 255, 255);
+    font-size:14px;
+}
+#signup-btn{
+    height:45px;
+    width:100%;
+    border-radius: 100px;
+    outline:none;
+    border:none;
+    font-size:16px;
+    background-color: #33adff;
+    color:#fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+#signup-btn:hover{
+    background-color: #13a0ff;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+.login p{
+    color:white;
+    font-size: 15px;
+}
+.login a{
+    color:white;
+    font-size: 15px;
+}
+.login a:hover{
+    color:#33adff;
+}
+.error-message{
+    color:rgb(255, 37, 37);
+    font-size:12px;
+    height:6px;
+    margin-top:10px;
+}
+#confirmpassword-error{
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    section {
+        width: 90vw;
+        padding: 15px;
+    }
+    .inputbox {
+        width: 100%;
+        max-width: 300px;
+    }
+    .forget {
+        width: 100%;
+        max-width: 300px;
+    }
+    #login-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    .register {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+@media (max-width: 480px) {
+    section {
+        width: 95vw;
+        padding: 10px;
+    }
+    .inputbox {
+        width: 100%;
+        max-width: 250px;
+    }
+    .forget {
+        width: 100%;
+        max-width: 250px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .forget label {
+        margin-bottom: 0.5rem;
+    }
+    #login-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    .register {
+        width: 100%;
+        max-width: 250px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width:1070px) {
+    section {
+        padding: 10px;
+    }
+    .inputbox {
+        width: 20rem;
+    }
+    .forget {
+        max-width: 300px;
+    }
+    #login-btn {
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,7 @@
+<Files config.php>
+Require all denied
+</Files>
+
+<Files database.php>
+Require all denied
+</Files>

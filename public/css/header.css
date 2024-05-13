@@ -36,41 +36,6 @@ li a{
     z-index: 1;
 }
 
-#submenu {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease-out; /* Thêm hiệu ứng chuyển đổi */
-    position: absolute;
-    top: 100%; /* Đặt submenu nằm ngay dưới mục "Watch" */
-    left: 6.5em;
-    width: 30%;
-    background-color: #222222; /* Màu nền */
-    padding-left:0;
-}
-
-#menu li:nth-child(2):hover #submenu {
-    max-height: 300px; /* Khi hover vào mục cha, hiển thị submenu */
-}
-
-#submenu li {
-    display: block;
-    padding-top:10px;
-}
-
-#submenu li a {
-    display: block;
-    padding:10px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền khi hover */
-}
-
-#submenu li a:hover {
-    background-color: #333333; /* Màu nền khi hover */
-}
-#submenu li:first-child a{
-    text-decoration: none;
-}
 nav{
     position:fixed;
     width:100%;
@@ -108,8 +73,25 @@ nav{
     display:inline-block;
     position: absolute;
     top:50%;
-    right:0;
+    right:-50px;
     transform: translate(-40%,-50%);
+    margin-right:5px;
+}
+#log-sign p{
+    color:white;
+    display:inline-block;
+    font-size:16px;
+    margin-right:10px;
+}
+#log-sign #avt{
+    display:inline-block;
+    cursor: pointer;
+    width:40px;
+}
+#log-sign #avt img{
+    border-radius: 50%;
+    width:80%;
+    vertical-align: middle;
 }
 button{
     border-radius: 10px;
@@ -146,11 +128,11 @@ button:hover{
         font-size:13px;
     }
     button{
-        height:25px;
-        width:65px;
+        height:20px;
+        width:50px;
     }
     button a{
-        font-size:10px;
+        font-size:8px;
     }
     #logo-container{
         left:0;
@@ -161,7 +143,10 @@ button:hover{
         width:4em;
     }
     #log-sign{
-        right:-1rem;
+        right:-0.8rem;
+    }
+    #log-sign p{
+        font-size:10px;
     }
     header{
         height:30px;
@@ -174,6 +159,7 @@ button:hover{
     }
     .checkbtn {
         display: block;
+        margin-right:10px;
     }
     #menu {
         position: fixed;
@@ -235,7 +221,10 @@ button:hover{
         width:6em;
     }
     #log-sign{
-        right:-0.3rem;
+        right:-1rem;
+    }
+    #log-sign p{
+        font-size:12px;
     }
 }
 

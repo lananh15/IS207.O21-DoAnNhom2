@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css" />
     <link rel="stylesheet" 
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
     <link rel="stylesheet" type="text/css" href="../../public/css/home.css" />
     <script src="menu.js"></script>
     <!-- PC screen -->
@@ -23,39 +23,7 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul id="menu">
-                <li><a href="home.php">Home</a></li>
-                <li>
-                    <a href="watch.html">Watch</a>
-                    <ul id="submenu">
-                        <li><a href="trailer.html">Trailer</a></li>
-                        <li><a href="movie.html">Movie</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-                <span></span>
-            </ul>
-            <div id="logo-container">
-                <img src="../../public/images&videos/logo.png" id="logo">
-            </div>
-            <div id="log-sign">
-                <button>
-                    <a href="login.html">Log in</a>
-                </button>
-                <button>
-                    <a href="signup.html">Sign up</a>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <?php require_once "header.php" ?>
     <div id="banner">
         <div id="text-banner">
             <h2>Welcome to the headquarters</h2>
@@ -94,7 +62,7 @@
         <h2>Get ready to feel!</h2>
         <h3>Inside Out 2 is coming to cinema on June 14th 2024!</h3>
         <div id="video-container">
-            <video loop>
+            <video muted autoplay loop>
                 <source src="../../public/images&videos/Home/video.mp4">
             </video>
         </div>
@@ -112,29 +80,11 @@
                 BEST ANIMATED FEATURE<br><br>
                 <?php
                     require_once '../models/Award.php';
-                    mysqli_close($conn);
                 ?>
             </p>
         </div>
     </div>
-    <footer>
-        <div id="footer-container">
-            <img src="../../public/images&videos/logo.png">
-            <section id="icon">
-                <i class="fa-brands fa-youtube"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-tiktok"></i>
-            </section>
-            <div>
-                <a href="about.html">About us</a>
-                <a href="contact.html">Contact us</a>
-            </div>
-            <hr>
-            <p>&copy;Disney&copy;Disney/Pixar&copy;&trade;Lucasfilm Ltd.&copy;Marvel, Disney Entertainment</p>
-        </div>
-        
-    </footer>
+    <?php require_once "footer.php" ?>
     <script src="../../public/js/home.js"></script>
 </body>
 

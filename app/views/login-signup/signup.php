@@ -80,7 +80,7 @@
             $username=$_POST['username'];
             $email=$_POST['email'];
             $password=$_POST['password'];
-            require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/app/controllers/VerifyCodeController.php';
+            require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/app/controllers/VerifyCodeController.php';
         }}
     ?>
     <script src="../../../public/js/signup.js"></script>

@@ -57,7 +57,7 @@
         </section>
         <script src="../../../public/js/login.js"></script>
     <?php 
-        require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/config/database.php';
+        require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/config/database.php';
         session_start();
         if(isset($_POST['submit']) && $_POST['submit']=="LOG IN"){
             $_SESSION['username']= $_POST['username'];;
@@ -75,8 +75,6 @@
                     exit;
                 }
                 else{
-                                    echo "<script> console.log(" . $stmt_select->rowCount() . ");</script>";
-
                     echo "<script>alert('Username or password is incorrect!');</script>";
                 }
             }

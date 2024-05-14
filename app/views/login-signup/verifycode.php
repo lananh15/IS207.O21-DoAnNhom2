@@ -142,7 +142,7 @@
             </form>
         </section>
         <?php
-        require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/config/database.php';
+        require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/config/database.php';
         if (isset($_POST['submit']) && $_POST['submit'] == "Submit") {
             $vcode = $_POST['vcode'];
             $currentTime=time();

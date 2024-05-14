@@ -1,5 +1,5 @@
 <?php
-    require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/config/database.php';
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/config/database.php';
 
     // Check if the session has been established
     if (isset($_SESSION['username'], $_SESSION['email'], $_SESSION['avatar'])) {

@@ -1,5 +1,5 @@
 <?php
-    require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/config/database.php';
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/config/database.php';
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'])) {
         $email = $_POST['email'];

@@ -3,7 +3,7 @@
 
     $clientID = '473840571616-rb0e5qkbqk3bp8v64ifngi7g6657vc5f.apps.googleusercontent.com';
     $clientSecret = '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';
-    $redirectUri = 'http://localhost/IS207.O21-DoAnWebNhom2-nhap-/app/views/login-signup/login.php';
+    $redirectUri = 'http://localhost/IS207.O21-DoAnNhom2/app/views/login-signup/login.php';
 
     $client = new Google_Client();
     $client->setClientId($clientID);

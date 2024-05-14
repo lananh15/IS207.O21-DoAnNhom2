@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/vendor/PHPMailer-master/src/Exception.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/vendor/PHPMailer-master/src/PHPMailer.php';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnWebNhom2-nhap-/vendor/PHPMailer-master/src/SMTP.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/vendor/PHPMailer-master/src/Exception.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/vendor/PHPMailer-master/src/PHPMailer.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/vendor/PHPMailer-master/src/SMTP.php';
 
 
 

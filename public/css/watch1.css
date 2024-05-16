@@ -1,0 +1,416 @@
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background-image: url(../../public/images&videos/sao-1.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav span{
+    position:absolute;
+    top:17%;
+    width:4.5em;
+    left: 6.5em;
+    height:66%;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+@font-face{
+    font-family:insideout;
+    src:url(../../public/font/InsideOut4.otf);
+}
+
+
+/* Main */
+
+main {
+    color: white;
+}
+
+#banner{
+    position: relative;
+    background-image: url("../../public/images&videos/Watch/Watch1/movie-bg-1.png");
+    top: 0vw;
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#poster{
+    position: relative;
+    top: 12vw;
+    left: 5vw;
+    height: 32vw;
+}
+
+
+#tags{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    row-gap: 4vw;
+    width: 32vw;
+    left: 34vw;
+    top: -5vw;
+    font-weight: 700;
+    font-size: 1.7vw;
+    column-gap: 3.5vw;
+    row-gap: 3vw;
+
+}
+
+.tag{
+    border: 1px solid white;
+    border-radius: 0.9vw;
+    width: 9.5vw;
+    height: 2.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#duration {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: 1fr 1fr; 
+    row-gap: 2vw;
+    left: 37vw;
+    width: 12vw;
+    font-weight: 700;
+    font-size: 1.7vw;
+    column-gap: 4vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration-content {
+    width: 10vw;
+}
+
+svg{
+    width: 4vw;
+    height: 4vw;
+}
+    
+
+
+@font-face{
+    font-family: inknutantiqua;
+    src: url(../font/Watch/InknutAntiqua-Regular.ttf);
+}
+
+#watch{
+    background-color: red;
+    font-weight: 800;
+    font-size: 1.4vw;
+    text-align: center;
+    position: relative;
+    left: -18vw;
+    top: 17vw;
+    width: 23vw;
+    border: 0.05vw solid white;
+    font-family: inknutantiqua;
+    height: 4.5vw;
+    border-radius: 0.52vw;
+    color: white;
+}
+
+
+#movie-info{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    left: 9.5vw;
+    width: 28vw;
+    row-gap: 1.7vw;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.7vw;
+    top: 2vw;
+}
+
+
+#movie-description{
+    font-size: 2.48vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    line-height: 2.9vw;
+    width: 88.3vw;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    height: 14.5vw;
+    top: 2.3vw;
+}
+
+#movie-description p{
+    width: 80vw;
+}
+
+#cast, #trailer{
+    font-family: insideout;
+    font-weight: 400;
+    font-size: 2.76vw;
+}
+
+
+#cast{
+    position: relative;
+    left: 5vw;
+    top: 5vw;
+    width: 4vw;
+}
+
+#cast-infor{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    width: 93.15vw;
+    left: 5vw;
+    top: 8vw;
+}
+
+#cast-infor div{
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#cast-infor div img{
+    width: 17.28vw;
+}
+
+.name-actor{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 2vw;
+    position: relative;
+    top: 4vw;
+}
+
+.name-voice{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.72vw;
+    font-weight: 400;
+    position: relative;
+    top: 2vw;
+}
+
+#trailer{
+    position: relative;
+    top: 14vw;
+    left: 5vw;
+    width: 4vw;
+}
+
+#trailers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.8vw;
+    position: relative;
+    top: 18vw;
+}
+
+
+#trailer-link{
+    width: 31.5vw;
+    margin-bottom: 25vw;
+}
+
+
+
+#movie-description{
+    width: 100%;
+    height: 60%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+
+#cast {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+
+#cast div{
+    width: 20%;
+}
+
+#cast h1, #trailer h1 {
+    width: 100%; 
+}
+
+
+#trailer{
+        display: flex;
+        flex-wrap: wrap; /* Đảm bảo các phần tử con xuống dòng khi không đủ không gian */
+        justify-content: center; 
+        align-items: center; 
+        text-align: center; 
+}
+
+
+
+
+/* Footer */
+footer{
+    padding-top:5vw;
+    background-color: transparent;
+    height:36vw;
+
+}
+#footer-container{
+    margin:1vw;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vw 3vw 3vw 5vw;
+    place-items:center;
+    border:1px solid white;
+    width:96vw;
+}
+footer img{
+    padding:4vw;
+    width:30vw;
+}
+#icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#icon i {
+    margin-left: 2vw;
+    width: 3vw;
+    height: 3vw;
+    font-size:1.3vw;
+    color: white;
+    cursor: pointer;
+    background-color: #242633;
+    border-radius: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer a{
+    color:white;
+    display:inline;
+    text-decoration: none;
+    font-size:1.3vw;
+    padding-left:2vw;
+}
+hr{
+    width:80vw;
+}
+#footer-container p{
+    color:white;
+    font-size:1vw;
+}
+
+
+/* Smartphone */
+@media screen and (max-width:767px){
+    li a{
+        font-size:13px;
+    }
+    button{
+        height:25px;
+        width:65px;
+    }
+    button a{
+        font-size:10px;
+    }
+    #logo-container{
+        left:0;
+        transform: translate(0,-50%);
+
+    }
+    #logo{
+        width:4em;
+    }
+    #log-sign{
+        right:-1rem;
+    }
+    header{
+        height:60px;
+    }
+}
+/* Tablet */
+@media screen and (max-width:1070px) {
+    #check:checked~ul {
+        left: 0;
+    }
+    .checkbtn {
+        display: block;
+    }
+    #menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition: all .5s;
+        display:block;
+        background-color: #222222;
+    }
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    nav span{
+        position:absolute;
+        top:100px;
+        left:0;
+        width:100%;
+        height:70px;       
+        border-radius: 0;
+        background: linear-gradient(45deg, #3466ff43,#6ac4fc43);
+    }
+    #menu li:first-child a:hover,
+    #menu li:nth-child(3) a:hover,
+    #menu li:nth-child(4) a:hover,
+    #menu li:nth-child(5) a:hover {
+        color:#66C2EF;
+    }
+    #menu li:first-child:hover~span,
+    #menu li:nth-child(3):hover~span,
+    #menu li:nth-child(4):hover~span,
+    #menu li:nth-child(5):hover~span {
+        top:100px;
+        left:0;
+    }
+    #menu li:nth-child(2):hover~span {
+        width:100%;
+        left: 0;
+        top:100px;
+    }
+    #logo{
+        width:6em;
+    }
+    #log-sign{
+        right:0.5vw;
+    }
+}
+/* Desktop */
+@media screen and (min-width:1024px){
+    header{
+        max-height:80px;
+    }
+} 

@@ -9,8 +9,8 @@ body{
 nav span{
     position:absolute;
     top:17%;
-    width:5em;
-    left: 18.3em;
+    width:4.5em;
+    left: 6.5em;
     height:66%;
     background: linear-gradient(45deg, #192e4f,#33adff);
     border-radius: 10px;
@@ -19,82 +19,45 @@ nav span{
 
 /* Main */
 main {
-    margin-bottom: -15vw;
-}
-
-#top-container {
-    position: relative;
-    text-align: center;
-}
-
-#top-container img {
-    width: 96vw;
-    position: relative;
-    left: 48%;
-    top: 8vw;
-    transform: translate(-50%);
-}
-
-h1, p {
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2.65vw;
-    font-weight: 400;
 }
 
-#top-container h1 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: insideout;
-    font-size: 14vw;
-    width: 100%;
-    left: 0;
-    right: 0;
-    background: linear-gradient(90deg, white, #B1CFF2 0%, #FCFDFF 100%);
-    -webkit-background-clip: text; 
-    animation: fadeColor 6s forwards;}
-
-@keyframes fadeColor {
-    0% { color: white; }
-    25% { color: white; }
-    50% { color: #B1CFF2; }
-    75% { color: #5A95DB; }
-    100% { color: linear-gradient(90deg, #B1CFF2 0%, #5A95DB 41.17%, #FCFDFF 100%);
-    }
+main button {
+    color: white;
+    width: 3vw;
+    border: 0;
 }
 
-#members {
+main button:hover {
+    background-color: inherit;
+}
+
+main img {
+    height: 44.78vw;
     position: relative;
-    left: 11vw;
-    width: 80vw;
-    top: 14vw;
+    top: 4.7vw;
+    width: 98.7vw;
 }
 
-#members p {
-    margin-bottom: 0;
-    margin-top: 0.5vw;
-    line-height: 2.75vw;
-}
-
-#anxiety {
+#movie-option {
     position: relative;
-    left: 61vw;
-    top: -18vw;
-    width: 35vw;
+    height: 5.11vw;
+    top: 4.5vw;
+    background-color: #240F0F9C;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50vw;
 }
 
-#anxiety img {
-    width: 35vw;
-}
-
-#bottom-container {
+#movie-controls-left button, #movie-controls-right button {
+    width: 3.8vw;
+    margin-left: 0.8vw;
     position: relative;
-    width: 76vw;
-    left: 50%;
-    transform: translate(-50%);
-    top: -17vw;
-    line-height: 2.65vw;
+    top: 1vw;
+}
+
+#movie-controls-left {
+    margin-left: 2vw;
 }
 
 @font-face {
@@ -102,6 +65,114 @@ h1, p {
     src: url(../font/InsideOut4.otf);
 }
 
+h1 {
+    font-family: insideout;
+    color: white;
+    font-weight: 400;
+    font-size: 4.8vw;
+    position: relative;
+    left: 3.5vw;
+    width: 20vw;
+    top: 4.5vw;
+}
+
+#starts button {
+    width: 3.5vw;
+    margin-left: 0.5vw;
+}
+
+#starts {
+    position: relative;
+    top: -3vw;
+    left: 30vw;
+    width: 24.7vw;
+}
+
+#feedback {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 30vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5vw;
+    row-gap: 1.5vw;
+    position: relative;
+    top: -7vw;
+    left: 66vw;
+}
+
+#feedback button {
+    width: 4.8vw;
+}
+
+#actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.5vw;
+    width: 25vw;
+    font-size: 1.5vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    top: -3vw;
+    left: 5vw;
+}
+
+#actions button {
+    width: 4vw;
+}
+
+main hr {
+    width: 95vw;
+    margin-top: 20vw;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#comment-count {
+    font-size: 2.5vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    position: relative;
+    left: 5vw;
+    width: 20vw;
+}
+
+#comment {
+    display:grid;
+    grid-template-columns: 0.2fr 1fr; 
+    position: relative;  
+    left: 5vw;
+    margin-top: -5.5vw;
+    margin-bottom: 20vw;
+    width: 80vw;
+}
+
+#avatar {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+#comment-input {
+    width: 58.3vw;
+    height: 4.7vw;
+    background-color: initial;
+    border: 0.07vw solid white;
+    position: relative;
+    top: 7.3vw;
+    border-radius: 0.69vw;
+}
+
+::placeholder {
+    font-family: merriweather;
+    font-weight: 400;
+    font-size: 1.6vw;
+    padding-left: 2vw;
+}
+
+@font-face {
+    font-family: merriweather;
+    src: url(../font/Watch/Merriweather-Regular.ttf);
+}
 /* Footer */
 footer{
     padding-top:5vw;
@@ -156,6 +227,7 @@ hr{
     color:white;
     font-size:1vw;
 }
+
 
 /* Smartphone */
 @media screen and (max-width:767px){
@@ -213,7 +285,7 @@ hr{
     }
     nav span{
         position:absolute;
-        top:255px;
+        top:100px;
         left:0;
         width:100%;
         height:70px;       
@@ -221,22 +293,22 @@ hr{
         background: linear-gradient(45deg, #3466ff43,#6ac4fc43);
     }
     #menu li:first-child a:hover,
-    #menu li:nth-child(2) a:hover,
     #menu li:nth-child(3) a:hover,
+    #menu li:nth-child(4) a:hover,
     #menu li:nth-child(5) a:hover {
         color:#66C2EF;
     }
     #menu li:first-child:hover~span,
-    #menu li:nth-child(2):hover~span,
     #menu li:nth-child(3):hover~span,
+    #menu li:nth-child(4):hover~span,
     #menu li:nth-child(5):hover~span {
-        top:255px;
+        top:100px;
         left:0;
     }
-    #menu li:nth-child(4):hover~span {
+    #menu li:nth-child(2):hover~span {
         width:100%;
         left: 0;
-        top:255px;
+        top:100px;
     }
     #logo{
         width:6em;

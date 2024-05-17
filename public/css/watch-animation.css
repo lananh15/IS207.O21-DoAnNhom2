@@ -1,0 +1,173 @@
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background-color: black;
+    background-size: cover;
+}
+
+@font-face{
+    font-family:insideout;
+    src:url(../../public/font/InsideOut4.otf);
+}
+
+
+
+nav span{
+    position:absolute;
+    top:17%;
+    width:4.5em;
+    left: 6.5em;
+    height:66%;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+main{
+    width:100%;
+    height:100vh;
+    overflow: hidden;
+}
+
+.banner{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+
+
+#prevBtn,
+#nextBtn {
+    position: absolute; /* Đặt vị trí tuyệt đối để căn chỉnh */
+    top: 50%;
+    transform: translateY(-50%); 
+    color: white;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+#prevBtn {
+    left: 0.75em; /* Đặt nút Previous ở bên trái */
+}
+
+#nextBtn {
+    right: 0.75em; /* Đặt nút Next ở bên phải */
+}
+
+
+
+/* Smartphone */
+@media screen and (max-width:767px){
+    li a{
+        font-size:13px;
+    }
+    button{
+        height:25px;
+        width:65px;
+    }
+    button a{
+        font-size:10px;
+    }
+    #logo-container{
+        left:0;
+        transform: translate(0,-50%);
+
+    }
+    #logo{
+        width:4em;
+    }
+    #log-sign{
+        right:-1rem;
+    }
+    header{
+        height:60px;
+    }
+}
+/* Tablet */
+@media screen and (max-width:1070px) {
+    #check:checked~ul {
+        left: 0;
+    }
+    .checkbtn {
+        display: block;
+    }
+    #menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition: all .5s;
+        display:block;
+        background-color: #222222;
+    }
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    nav span{
+        position:absolute;
+        top:100px;
+        left:0;
+        width:100%;
+        height:70px;       
+        border-radius: 0;
+        background: linear-gradient(45deg, #3466ff43,#6ac4fc43);
+    }
+    #menu li:first-child a:hover,
+    #menu li:nth-child(3) a:hover,
+    #menu li:nth-child(4) a:hover,
+    #menu li:nth-child(5) a:hover {
+        color:#66C2EF;
+    }
+    #menu li:first-child:hover~span,
+    #menu li:nth-child(3):hover~span,
+    #menu li:nth-child(4):hover~span,
+    #menu li:nth-child(5):hover~span {
+        top:100px;
+        left:0;
+    }
+    #menu li:nth-child(2):hover~span {
+        width:100%;
+        left: 0;
+        top:100px;
+    }
+    #logo{
+        width:6em;
+    }
+    #log-sign{
+        right:0.5vw;
+    }
+}
+/* Desktop */
+@media screen and (min-width:1024px){
+    header{
+        max-height:80px;
+    }
+} 

@@ -14,9 +14,9 @@
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
     <link rel="stylesheet" type="text/css" href="../../public/css/blog2.css" />
-    <title>Blog</title>
-    <link rel="icon" type="image/x-icon"
-
+    <title>Blog 2</title>
+    <link rel="icon" type="image/x-icon">
+    <script src="../../public/js/sub-blog.js"></script>
 </head>
 <body>
     <?php require_once "header.php" ?>
@@ -58,7 +58,4 @@
     </div>
     <?php require_once "footer.php" ?>
 </body>
-<script>
-    
-</script>
 </html>

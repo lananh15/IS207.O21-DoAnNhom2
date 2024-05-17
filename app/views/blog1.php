@@ -14,8 +14,9 @@
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
     <link rel="stylesheet" type="text/css" href="../../public/css/blog1.css" />
-    <title>Blog</title>
-    <link rel="icon" type="image/x-icon"
+    <title>Blog 1</title>
+    <link rel="icon" type="image/x-icon">
+    <script src="../../public/js/sub-blog.js"></script>
 </head>
 <body>
     <?php require_once "header.php" ?>
@@ -93,18 +94,19 @@
     <br>
     <hr id="h1">
     <div id="comment-container">
-        <div id="comment"> <div id="number"> </div> comment</div>
-        <form class="comment-form">
-           <img src="../../public/images&videos/Blog2/avatar.png" alt="Avatar" class="avatar">
-            <input type="text" placeholder="Leave a comment" class="comment-box">
+        <div id="comment"> <div id="number">0</div> comment</div>
+        <form class="comment-form" onsubmit="return false;">
+            <img src="../../public/images&videos/Blog1/avatar.png" alt="Avatar" class="avatar">
+            <input type="text" placeholder="Leave a comment" class="comment-box" id="comment-box">
         </form>  
     </div>
     <div class="button-container">
-        <button type="submit" id="Cancel" class="button-blog">Cancel</button>
-        <button type="submit" id="Send" class="button-blog">Send</button>
+        <button type="submit" id="Cancel" class="button-blog" onclick="cancelComment()">Cancel</button>
+        <button type="submit" id="Send" class="button-blog" onclick="insertComment()">Send</button>
+    </div>
+     <!-- comment -->
+    <div class="insert-comment">
     </div>
     <?php require_once "footer.php" ?>
 </body>
-<script>
-</script>
 </html>

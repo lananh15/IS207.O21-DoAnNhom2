@@ -203,22 +203,31 @@ nav span{
     padding-right: 12em;
     font-family: Meri-San;
 }
-
+#h1
+{
+    width: 60vw;
+}
 /*comment*/
 #comment-container div
 {
     max-width:100%;
     position: absolute;
     margin: 0;
-    width: 70%;
+    width: 60%;
 }
-
+#number
+{
+    color: #FFFFFF;
+    font-size: 1.8vw;
+    position: absolute;
+    left: -2vw;
+}
 #comment {
 
     color: #FFFFFF;
     font-size: 1.8vw;
     position: absolute;
-    left: 12vw;
+    left: 22vw;
 }
 .comment-form {
     position: relative;
@@ -232,8 +241,9 @@ nav span{
     border-radius: 50%;
     object-fit: cover;
     max-width: 100%;
-    left:12vw;
+    left:22vw;
     top: 3vw; 
+    border: 0.1vw solid white;
 }
 .comment-box::placeholder 
 {
@@ -245,13 +255,13 @@ nav span{
     position: relative;
 }
 input {
-    width: 70%;
+    width: 51%;
     background-color: rgba(217, 217, 217, 0);
     border: 0.1vw solid white;
     border-radius: 0.5vw;
     height: 5vw;
     top: 1vw;
-    left: 13vw;
+    left: 23vw;
     position: relative;
     transition: background-color 0.3s;
     color: #FFFFFF; 
@@ -283,24 +293,68 @@ input:hover {
 #Send
 {
     top: 2vw;
-    left: 80.5vw;
+    left: 72vw;
 }
 #Cancel
 {
     top:2vw;
-    left: 72vw;
+    left: 64vw;
 }
 .button-blog:hover
 {
     background-color: linear-gradient(to bottom,#77AAFB, #1250B0);
     border: 0.1 vw solid #619EFF;
 }
+/* update for new comment */
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1vw;
+    padding-top: 2vw;
+    padding-left: 22vw;
+    border-bottom: 0.1vw;
+}
+.comment-content {
+    display: flex;
+    align-items: flex-start;
+}
+.comment-avatar {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1vw;
+    border: 0.1vw solid white;
+}
+.comment-details {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1.5vw;
+}
+.comment-username {
+    font-weight: bold;
+    font-size: 1.6vw;;
+    font-family: Meri-regular;
+    color: #f8f9d1;
+}
+.comment-timestamp {
+    font-size: 1vw;
+    color: #B0B0B0;
+    top: 0.1vw;
+}
+.comment-text {
+    padding-top: 0.2vw;
+    font-size: 1.4vw;
+    font-family: Meri-San;
+}
 /* Footer */
 footer{
     padding-top:5vw;
     background-color: transparent;
     height:36vw;
-
+    background-image: url(../../public/images&videos/backgroundinfooter.png);
+    background-size: cover;
 }
 #footer-container{
     margin:1vw;

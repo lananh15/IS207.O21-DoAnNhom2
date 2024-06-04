@@ -11,7 +11,7 @@
     $stmt_insert->bindParam(":avatar", $avatar, PDO::PARAM_STR);
     $stmt_insert->execute();
 
-    echo "<script>alert('Sign up successful!'); window.location.href='login.php';</script>";
+    echo "<script>alert('Sign up successfully!'); window.location.href='login.php';</script>";
     unset($_SESSION['username']);
     unset($_SESSION['email']);
     unset($_SESSION['hashedPassword']);

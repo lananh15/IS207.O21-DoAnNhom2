@@ -1,3 +1,7 @@
+<?php
+require_once '../controllers/GetUserId.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -17,15 +21,36 @@
     <title>Watch</title>
     <link rel="icon" type="image/x-icon"
         href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        <?php if (isset($_SESSION['user_id'])): ?>
+            var userId = <?php echo json_encode($_SESSION['user_id']); ?>;
+            console.log("User ID:", userId); 
+        <?php else: ?>
+            var userId = null;
+            console.log("User ID is null"); 
+        <?php endif; ?>
+    </script>
 
 </head>
 
 <body>
-    <?php require_once "header.php" ?>
+    <?php 
+        require_once "header.php";
+        require_once "../models/Movie.php";
+        $movieDetails = getMovie(1);
+
+        require_once "../models/Cast.php"; 
+        $castDetails = getCast(1);
+
+        require_once "../models/Trailer.php";
+        $trailerDetails = getTrailerImages(1);
+
+    ?>
     <main>
         <div id="banner">
-            <img id="poster" src="../../public/images&videos/Watch/Watch1/movie-poster-1.png" alt="moive-poster-1" id="poster">
-            <button id="watch">WATCH</button>
+        <img id="poster" src="<?php echo $movieDetails['image_movie']; ?>" alt="moive-poster-2" id="poster">
+            <button id="watch" onclick="showMovie(<?php echo $movieDetails['id_movie']; ?>)">WATCH</button>
             <div id="duration">
                 <div class="duration">
                     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,7 +61,7 @@
                             stroke-linejoin="round" />
                     </svg>
                 </div>
-                <p class="duration-content">95 minute</p>
+                <p class="duration-content"><?php echo $movieDetails['duration'] ?> minutes</p>
             </div>
             <div id="tags">
                 <div class="tag">Fantasy</div>
@@ -49,87 +74,40 @@
         </div>
         <div id="movie-info">
             <div>Directed by:</div>
-            <div>Peter Docter</div>
+            <div><?php echo $movieDetails['director']; ?></div>
             <div>Country:</div>
-            <div>United States</div>
+            <div><?php echo $movieDetails['country'] ?></div>
             <div>Release dates:</div>
-            <div>May 18, 2015</div>
+            <div><?php echo $movieDetails['release_date'] ?></div>
         </div>
             <div id="movie-description">
-                <p>
-                    Growing up can be a bumpy road,
-                    and it's no exception for Riley,
-                    who is uprooted from her Midwest life when her father starts a new job in San Francisco.
-                    Like all of us, Riley is guided by her emotions - Joy, Fear, Anger, Disgust and Sadness.
-                    The emotions live in Headquarters, the control center inside Riley's mind,
-                    where they help advise her through everyday life.
-                    As Riley and her emotions struggle to adjust to a new life in San Francisco,
-                    turmoil ensues in Headquarters.
-                    Although Joy, Riley's main and most important emotion,
-                    tries to keep things positive,
-                    the emotions conflict on how best to navigate a new city, house and school.
-                </p>
+                <p><?php echo $movieDetails['description'] ?></p>
             </div>
             <p id="cast">cast</p>
             <div id="cast-infor">
-                <div>
-                    <div>
-                        <img src="../../public/images&videos/Watch/Watch1/Amy Poehler.png" alt="Amy Poehler">
-            
-                        <p class="name-actor">Amy Poehler</p>
-                        <p class="name-voice">Joy (voice)</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="../../public/images&videos/Watch/Watch1/Mindy Karling.png" alt="Mindy Karling">
-            
-                        <p class="name-actor">Mindy Karling</p>
-                        <p class="name-voice">Disgust (voice)</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="../../public/images&videos/Watch/Watch1/Phyllis Smith.png" alt="Phyllis Smith">
-            
-                        <p class="name-actor">Phyllis Smith</p>
-                        <p class="name-voice">Sadness (voice)</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="../../public/images&videos/Watch/Watch1/Lewis Black.png" alt="Lewis Black">
-            
-                        <p class="name-actor">Lewis Black</p>
-                        <p class="name-voice">Anger (voice)</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="../../public/images&videos/Watch/Watch1/Bill Hader.png" alt="Bill Hader">
-            
-                        <p class="name-actor">Bill Hader</p>
-                        <p class="name-voice">Fear (voice)</p>
-                    </div>
-                </div>
-                
+                <?php 
+                    foreach ($castDetails as $cast): ?>
+                        <div>
+                            <img src="<?php echo $cast['image']; ?>" alt="<?php echo $cast['name']; ?>">
+                            <p class="name-actor" id="<?php echo str_replace(' ', '-', $cast['name']); ?>"><?php echo $cast['name']; ?></p>
+                            <p class="name-voice" ><?php echo $cast['role']; ?></p>
+                        </div>
+                    <?php endforeach;
+                ?>
             </div>
             <p id="trailer">trailer</p>
             <div id="trailers">
-                <a href="">
-                    <img src="../../public/images&videos/Watch/Watch1/Trailer 3.png" alt="Trailer 3" id="trailer-link">
-                </a>
-                <a href="">
-                    <img src="../../public/images&videos/Watch/Watch1/Trailer 2.png" alt="Trailer 2" id="trailer-link">
-                </a>
-                <a href="">
-                    <img src="../../public/images&videos/Watch/Watch1/Trailer 1.png" alt="Trailer 1" id="trailer-link">
-                </a>
+                <?php 
+                    foreach ($trailerDetails as $trailer): ?>
+                        <img src="<?php echo $trailer['image']; ?>" alt="Trailer <?php echo $trailer['id_trailer']; ?>" onclick="showTrailer(<?php echo $trailer['id_trailer']; ?>)" id="trailer-link">
+                    <?php endforeach;
+                ?>
             </div>
                 
     </main>
 
     <?php require_once "footer.php" ?>
+    <script src="../../public/js/watch-video.js"></script>
 </body>
 
 </html>

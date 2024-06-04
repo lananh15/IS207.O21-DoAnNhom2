@@ -25,22 +25,18 @@
 
     <main>
         <div id="top-container">
-            <img src="../../public/images&videos/About us/Design-team bg.png" alt="">
+            <img src="../../public/images&videos/About/Design-team bg.png" alt="">
             <h1>DESIGN TEAM</h1>
         </div>
         <div id="members">
             <p>Our team includes 6 members:</p>
             <br>
             <br>
-            <p>Ngô Hoàng Lan Anh - 22520051 - Team leader</p>
-            <p>Nguyễn Thị Kim Ngọc - 22520959</p>
-            <p>Đỗ Phan Hải Phi - 22521079</p>
-            <p>Nguyễn Hoàng Tú Trinh - 22521538</p>
-            <p>Nguyễn Trí Vĩnh - 22521678</p>
-            <p>Hồ Lê Vy - 22521702</p>
+            <?php 
+                require_once "../models/Members.php"; ?>
         </div>
         <div id="anxiety">
-            <img src="../../public/images&videos/About us/anxiety-picture.png" alt="Anixiety">
+            <img src="../../public/images&videos/About/anxiety-picture.png" alt="Anixiety">
         </div>
 
         <div id="bottom-container">

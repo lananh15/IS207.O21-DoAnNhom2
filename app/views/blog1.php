@@ -4,109 +4,111 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-...your-integrity-hash-here..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css" />
-    <link rel="stylesheet" 
-      href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/blog1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
+    <link rel="stylesheet" href="/IS207.O21-DoAnNhom2/public/css/sub-blog.css?v=<?php echo time(); ?>">
     <title>Blog 1</title>
-    <link rel="icon" type="image/x-icon">
-    <script src="../../public/js/sub-blog.js"></script>
+    <link rel="icon" type="image/x-icon"
+        href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
+    <script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
 </head>
+
 <body>
-    <?php require_once "header.php" ?>
-    <div id="banner">
-        <h2>Feature</h2>
-        <h1>Secondary emotions concept in</h1>
-        <h1>Inside out 2</h1>
-        <h3 >Published on April <span>16<sup>th</sup></span>, 2024</h3>
+<?php 
+    require_once "header.php"; 
+    require_once "../models/PostId.php"; 
+    $postDetails = getPost(25);
+?>
+<div id="banner">
+    <?php
+    $select_posts = $conn->prepare("SELECT * FROM posts WHERE status = 'active' AND id=23 ORDER BY date DESC");
+    $select_posts->execute();
+    if ($select_posts->rowCount() > 0) {
+        while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
+            $image_data_base64 = $fetch_posts['imagedata'];
+            if ($image_data_base64 != '') {
+                $imagedata = base64_decode($image_data_base64);
+                $image_src = 'data:image/jpeg;base64,' . base64_encode($imagedata);
+                echo '<img src="' . $image_src . '" class="image" alt="">';
+            }
+        }
+    }
+    ?>
+</div>
+<div id="Main-content">
+    <h2><?php echo $postDetails['title'] ?></h2>
+    <p id="content"><?php echo $postDetails['content'] ?></p>
+    <div id="sign">
+        <p id="author">By <?php echo $postDetails['author'] ?></p>
+        <p id="date"><?php echo $postDetails['date'] ?></p>
     </div>
-    <div id="Post1">
-        <h2 id="firsth2">This is me clowning, also breaking my silence.</h2>
-        <p id="first">I’ve seen people having different opinions on Inside Out 2; that sequel is like this, sequel is like that. Most of the time, we see how people always ask why Anxiety is an emotion when we already have Fear, or why we don’t see adults have those emotions.</p>
-        <p id="second">And please note that I’m not here to answer those questions; I’ll just let the movie do it itself.</p>
-        <p id="third">As an Inside Out enjoyer, I would like to share some thoughts and theories on the sequel since I find it pretty intriguing.</p>
-        <h2 class="heading">Now, let’s compare the posters.</h2>
-        <center><img src="../../public/images&videos/Blog1/poster-comparing.png" class="banner"></center>
-        <div id="next">
-            <p class="next1">As we can see, there are many small changes to the environment in the poster. The background in the 1st movie is filled with colors of the 5 emotions, while in the 2nd movie, it’s blank, like a white space. Joy’s expressions are different too; in the new poster, she’s just surprised as if she’s trying to process something. “Big changes. New emotions” because puberty hits Riley, and I think adding new emotions to this phase is a nice idea.</p>
-            <p class="next1">It can be a bit complicated to understand since there are different emotional theories</p>
-            <p class="next1">So there are terms called "Primary Emotions" and "Secondary Emotions."</p>
-            <p class="next1">Primary emotions are direct emotional reactions to a situation, and they are called primary because they come first. It is your very first reaction to a situation or event, and they alert you about your needs.</p>
-            <p class="next1">Secondary emotions are the emotions that are often felt after the primary emotion has been experienced. They are the reactions to our primary emotions and are often habitual or learned responses.</p>
-            <p class="next1">The purpose of secondary emotions is to cover up the sensitive primary emotions with something less sensitive. In this way, they are a way of protecting the self from being vulnerable.</p>
-            <p class="next1">Below are some other main differences between primary and secondary emotions.</p>
-       </div>
-        <h2 class="heading">Primary emotions</h2>
-        <p class="primary-emotions">+ Are learned or habitual</p>
-        <p class="primary-emotions">+ Functional</p> 
-        <p class="primary-emotions">+ Can be painful or pleasurable</p>
-        <p class="primary-emotions">+ Can be harmful when reacted to</p>
-        <p class="primary-emotions">+ Are sensitive and vulnerable</p>
-        <p class="primary-emotions">+ Are rooted in the deeper parts of the brain</p>
-        <p class="primary-emotions">+ Can help keep us connected with others</p>
-        <p class="primary-emotions">+ Can help guide our actions</p>
-        <p class="primary-emotions">+ Are instinctive and natural</p>
-        <h2 class="heading">Secondary emotions</h2>
-        <p class="secondary-emotions">+ Are learned or habitual</p>
-        <p class="secondary-emotions">+ Protective</p>
-        <p class="secondary-emotions">+ Defensive and avoidant</p>
-        <p class="secondary-emotions">+ Can be better controlled than primary emotions</p>
-        <p class="secondary-emotions">+ Can numb emotions</p>
-        <p class="secondary-emotions">+ Do not listen to what the emotions are asking</p>
-        <p class="secondary-emotions">+ Comes from a place of learning, e.g., ‘I should not feel sad’ or ‘I should not</p>
-        <p class="secondary-emotions">feel any anger.’ This is not the same as self-control.</p>
-        <p class="secondary-emotions">+ Are motivated by pain reduction</p>
-        <p class="secondary-emotions">+ Linger around long after the event has happened</p>
-        <p class="secondary-emotions">+ Generally, leads to distance and disconnect from our goals, values, and people</p>
-        <p class="next2">In the poster, the four emotions appear underneath the five core emotions. So according to the Secondary Emotions Theory for Inside Out 2, Anxiety, Ennui, Embarrassment, and Envy can be those "secondary emotions," as they will ‘help’ Riley react to the emotions she feels or protect her from feeling ‘vulnerable.’</p>
-        <p class="next2">Plus, Anxiety and the rest seem to just "move in," but not born from the dark like Joy was. Where were they all the time?</p>
-        <p class="next2" id="before">Before puberty hits Riley, what she felt wasn't too complex for the five basic emotions to handle. But now, she is more aware of herself and the surrounding environment, how she would react to it. She may feel more self-conscious.</p>
-        <p class="next2">Live right and live honestly... Like we have to have something to rely on. I think that often when teenagers reach puberty, they want to be more independent than dependent, like they don't need anyone. How we feel, we can solve it ourselves, so the other four emotions were born to do that. Maybe Riley will go through the same psychological change…</p>
-        <p class="next2">+ Now speaking of Fear and Anxiety, Fear's job is to get the body prepared to fight or flee. While Anxiety's job is reacting to the emotions versus danger in the environment. Anxiety is a stop-reaction to the impulses that fear and other core emotions create inside the body. For instance, Fear mobilizes energy for movement, and Anxiety pushes it back down.</p>
-        <center><img src="../../public/images&videos/Blog1/anxiety.png" class="banner"></center>
-        <br><br>
-        <p class="next3">+ Envy can be secondary emotions to Disgust, Anger, and Sadness. Actually, there may also be Fear, but not much.</p>
-        <p class="next3">+ Embarrassment probably works with the four as well.</p>
-        <p class="next3">+ Ennui can mask Anger, Fear, and Sadness…</p>
-        <br>
-        <p class="next3">Either way, unlike the rest, Joy doesn’t seem to have a secondary emotion in the movie. But we do know that Joy tends to mix herself with the other basic emotions more.</p>
-        <center><img src="../../public/images&videos/Blog1/memory-ball-color.png" class="banner" id="small"></center>
-        <p class="next4">However, in my opinion, if the new emotions become secondary emotions to Joy, then Riley will likely experience mental issues instead…</p>
-        <p class="next4">Now coming back to the poster, the blank space behind the emotions could mean that maybe Riley doesn't really want to feel the primary emotions and the secondary emotions rise up to fill that space for her.</p>
-        <p class="next4">This is a complex topic to talk about and Inside Out 2 may want to carry this out so we can have a simpler look to it. In the 1st movie, it’s more about getting to know the voices inside your head, and embracing Sadness to find happiness again. And it's not easy to make a film that exploits the psychology and physiology of this age group, it's very difficult to portray the relationships in your mind vividly. That just makes me intrigued more of how they will portray it in Inside Out 2.</p>
-        <h2 class="heading">Now some thoughts on the plot…</h2>
-        <p class="finally">During puberty, the new emotions will prevent the core ones from touching the console or they will have some conflicts.</p>
-        <p class="finally">So the plot can go like this, I haven’t thought too much about it so feel free to share more with me! Here goes.</p>
-        <p class="finally">At first, it can go smooth, when Riley seems to have more self-control and the core emotions are okay with the way the new emotions keep her calm through changes in puberty. But then they'll realize that it's actually not good for Riley to repress her emotions and how the four emotions drive her may go in an extreme way. She hits puberty, she experiences lots of things, the four take the lead, the five are okay but then they're not okay, or they're just okay since someone did a better job than them and they could go playing on the beach or something.</p>
-        <p class="finally">Or they just fight from the beginning and until the end then learn how to work together, which I'm not very fond of unless they found a good reason.</p>
-        <p class="finally">That's all for the plot based on the Secondary Emotions concept I can come up with for now!</p>
-        <div id="sign">
-        <p id="actor">By Muoidiemdoanweb</p>
-        <p id="date">Updated on April <span>17<sup>th</sup></span> 2024</p>
-       </div>
-    </div>
-    <br>
-    <hr id="h1">
+</div>
+<br>
+<hr id="h1">
     <div id="comment-container">
-        <div id="comment"> <div id="number">0</div> comment</div>
-        <form class="comment-form" onsubmit="return false;">
-            <img src="../../public/images&videos/Blog1/avatar.png" alt="Avatar" class="avatar">
-            <input type="text" placeholder="Leave a comment" class="comment-box" id="comment-box">
-        </form>  
+        <div id="comment">
+            <?php
+                $get_comment_count = $conn->prepare("SELECT post_id, COUNT(*) AS comment_count FROM post_comments GROUP BY post_id");
+                $get_comment_count->execute();
+                $comment_counts = $get_comment_count->fetchAll(PDO::FETCH_ASSOC);
+                $comment_count_map = [];
+                foreach ($comment_counts as $count) {
+                    $comment_count_map[$count['post_id']] = $count['comment_count'];
+                }
+                $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
+            ?>
+            <div id="number"><?php echo $current_post_comment_count; ?></div> comment<?php echo ($current_post_comment_count !== 1) ? 's' : ''; ?>
+        </div>
+        <form class="comment-form" method="post" action="" id="comment-form">
+            <img src="/IS207.O21-DoAnNhom2/public/images&videos/user1.png" alt="Avatar" class="avatar">
+            <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($postDetails['id']); ?>">
+            <textarea name="comment" placeholder="Leave a comment" class="comment-box" id="comment-box"></textarea>
+            <button type="submit" id="send" name="send" class="button-blog">Send</button>
+            <button type="reset" id="cancel" name="cancel" class="button-blog">Cancel</button>
+        </form>
     </div>
-    <div class="button-container">
-        <button type="submit" id="Cancel" class="button-blog" onclick="cancelComment()">Cancel</button>
-        <button type="submit" id="Send" class="button-blog" onclick="insertComment()">Send</button>
-    </div>
-     <!-- comment -->
     <div class="insert-comment">
-    </div>
-    <?php require_once "footer.php" ?>
+    <?php
+        $post_id = isset($postDetails['id']) ? $postDetails['id'] : null;
+        if ($post_id) {
+            $get_comments = $conn->prepare("SELECT pc.*, u.avatar, u.username AS username FROM post_comments pc INNER JOIN users u ON pc.user_id = u.id WHERE pc.post_id = ? ORDER BY pc.date DESC");
+            $get_comments->execute([$post_id]);
+            $comments = $get_comments->fetchAll();
+        } else {
+            die("Error: post_id is not set.");
+        }
+
+        function get_avatar_src($avatar) {
+            if (filter_var($avatar, FILTER_VALIDATE_URL)) {
+                return $avatar;
+            }
+            if (file_exists($_SERVER["DOCUMENT_ROOT"] . $avatar)) {
+                return $avatar;
+            }
+            return '/IS207.O21-DoAnNhom2/public/images&videos/user1.png';
+        }
+
+        foreach ($comments as $comment) {
+            $avatar_src = get_avatar_src($comment['avatar']);
+            echo '<div class="comment-item">
+                    <div class="comment-content">
+                        <img src="' . htmlspecialchars($avatar_src) . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
+                        <div class="comment-details">
+                            <span class="comment-username">' . htmlspecialchars($comment['username']) . '</span>
+                            <p class="comment-text">' . htmlspecialchars($comment['comment']) . '</p>
+                            <span class="comment-timestamp">' . htmlspecialchars($comment['date']) . '</span>
+                        </div>
+                    </div>
+                </div>';
+        }
+    ?>
+</div>
+
+    <?php require_once "footer.php"; ?>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
 </html>

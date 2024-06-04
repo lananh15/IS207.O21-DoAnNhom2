@@ -9,46 +9,108 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/normalize.css" />
     <link rel="stylesheet" 
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/blog4.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
+    <link rel="stylesheet" href="/IS207.O21-DoAnNhom2/public/css/sub-blog.css?v=<?php echo time(); ?>">
     <title>Blog 4</title>
-    <link rel="icon" type="image/x-icon">
-    <script src="../../public/js/sub-blog.js"></script>
+    <link rel="icon" type="image/x-icon"
+        href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
+    <script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
 <body>
-    <?php require_once "header.php" ?>
+    <?php 
+    require_once "header.php"; 
+    require_once "../models/PostId.php"; 
+    $postDetails = getPost(24);
+    ?>
     <div id="banner">
-        <h1>Riley's crew helps in creating Inside</h1>
-        <h1>Out 2!</h1>
-        <h3 >Published on April <span>17<sup>th</sup></span>, 2024</h3>
+        <?php
+        $select_posts = $conn->prepare("SELECT * FROM posts WHERE status = 'active' AND id=24 ORDER BY date DESC");
+        $select_posts->execute();
+        if ($select_posts->rowCount() > 0) {
+            while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
+                $image_data_base64 = $fetch_posts['imagedata'];
+                if ($image_data_base64 != '') {
+                    $imagedata = base64_decode($image_data_base64);
+                    $image_src = 'data:image/jpeg;base64,' . base64_encode($imagedata);
+                    echo '<img src="' . $image_src . '" class="image" alt="">';
+                }
+            }
+        }
+        ?>
     </div>
-    <div id="Riley">
-        <h2>Riley's crew is a smart idea</h2>
-        <p id="insideout2">In order to make sure Inside Out 2 captured the reality of being a teenage girl, the filmmakers created a focus group of girls ranging in age from 13 to 19. They dubbed the group “Riley’s Crew” and met with them every four months to show them the movie in progress.</p>
+    <div id="Main-content">
+        <h2><?php echo $postDetails['title'] ?></h2>
+        <p id="content"><?php echo $postDetails['content'] ?></p>
        <div id="sign">
-            <p id="actor">By Muoidiemdoanweb</p>
-            <p id="date">Updated on April <span>17<sup>th</sup></span> 2024</p>
+            <p id="author"><?php echo $postDetails['author'] ?></p>
+            <p id="date"><?php echo $postDetails['date'] ?></p>
        </div>
     </div>
     <br>
     <hr id="h1">
     <div id="comment-container">
-        <div id="comment"> <div id="number">0</div> comment</div>
-        <form class="comment-form" onsubmit="return false;">
-            <img src="../../public/images&videos/Blog4/avatar.png" alt="Avatar" class="avatar">
-            <input type="text" placeholder="Leave a comment" class="comment-box" id="comment-box">
-        </form>  
+        <div id="comment">
+            <?php
+                $get_comment_count = $conn->prepare("SELECT post_id, COUNT(*) AS comment_count FROM post_comments GROUP BY post_id");
+                $get_comment_count->execute();
+                $comment_counts = $get_comment_count->fetchAll(PDO::FETCH_ASSOC);
+                $comment_count_map = [];
+                foreach ($comment_counts as $count) {
+                    $comment_count_map[$count['post_id']] = $count['comment_count'];
+                }
+                $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
+            ?>
+            <div id="number"><?php echo $current_post_comment_count; ?></div> comment<?php echo ($current_post_comment_count !== 1) ? 's' : ''; ?>
+        </div>
+        <form class="comment-form" method="post" action="" id="comment-form">
+            <img src="/IS207.O21-DoAnNhom2/public/images&videos/user1.png" alt="Avatar" class="avatar">
+            <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($postDetails['id']); ?>">
+            <textarea name="comment" placeholder="Leave a comment" class="comment-box" id="comment-box"></textarea>
+            <button type="submit" id="send" name="send" class="button-blog">Send</button>
+            <button type="reset" id="cancel" name="cancel" class="button-blog">Cancel</button>
+        </form>
     </div>
-    <div class="button-container">
-        <button type="submit" id="Cancel" class="button-blog" onclick="cancelComment()">Cancel</button>
-        <button type="submit" id="Send" class="button-blog" onclick="insertComment()">Send</button>
-    </div>
-    <!-- comment -->
     <div class="insert-comment">
-    </div>
-    <?php require_once "footer.php" ?>
-</body>
+    <?php
+        $post_id = isset($postDetails['id']) ? $postDetails['id'] : null;
+        if ($post_id) {
+            $get_comments = $conn->prepare("SELECT pc.*, u.avatar, u.username AS username FROM post_comments pc INNER JOIN users u ON pc.user_id = u.id WHERE pc.post_id = ? ORDER BY pc.date DESC");
+            $get_comments->execute([$post_id]);
+            $comments = $get_comments->fetchAll();
+        } else {
+            die("Error: post_id is not set.");
+        }
 
+        function get_avatar_src($avatar) {
+            if (filter_var($avatar, FILTER_VALIDATE_URL)) {
+                return $avatar;
+            }
+            if (file_exists($_SERVER["DOCUMENT_ROOT"] . $avatar)) {
+                return $avatar;
+            }
+            return '/IS207.O21-DoAnNhom2/public/images&videos/user1.png';
+        }
+
+        foreach ($comments as $comment) {
+            $avatar_src = get_avatar_src($comment['avatar']);
+            echo '<div class="comment-item">
+                    <div class="comment-content">
+                        <img src="' . htmlspecialchars($avatar_src) . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
+                        <div class="comment-details">
+                            <span class="comment-username">' . htmlspecialchars($comment['username']) . '</span>
+                            <p class="comment-text">' . htmlspecialchars($comment['comment']) . '</p>
+                            <span class="comment-timestamp">' . htmlspecialchars($comment['date']) . '</span>
+                        </div>
+                    </div>
+                </div>';
+        }
+    ?>
+</div>
+
+    <?php require_once "footer.php"; ?>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
 </html>

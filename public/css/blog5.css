@@ -2,8 +2,9 @@ body{
     padding:0;
     margin:0;
     box-sizing: border-box;
-    background-image: url(../../public/images&videos/sao.png);
+    background-image: url(../../public/images&videos/sao-1.png);
     background-size: cover;
+    height: 100%; /* Đảm bảo rằng body và html có chiều cao 100% */
 }
 @font-face{
     font-family:insideout;
@@ -35,36 +36,35 @@ nav span{
     border-radius: 10px;
     transition: 0.5s;
 }
-#banner{
+#space {
     position: relative;
-    top:0;
-    background-size: cover;
-    width:100%;
-    height:90vh;
+    top: 0;
+    width: 100%;
+    height: 110vh;
     font-family: insideout;
-    color:#fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    padding: 0; 
+    margin: 0; 
 }
-#banner div{
-    text-align:center;
-    position:absolute;
-    top:55%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width:100%;
+
+#space h1 {
+    margin: 0; /* Reset margin */
+    font-size: 4vw;
+    font-weight: normal;
+    padding: 0; /* Reset padding */
 }
-/*long term*/
-#banner h1{
-    margin: 0;
-    width: 70%;
-    position: relative; 
-    top: 4.2em;
-    padding-left:  5.5em;
-    font-size:3.5vw;
-    font-weight:normal;
+
+#h1
+{
+    width:62vw;
 }
 #h1
 {
-    width:60%;
+    width: 60vw;
 }
 /*comment*/
 #comment-container div
@@ -86,7 +86,7 @@ nav span{
     color: #FFFFFF;
     font-size: 1.8vw;
     position: absolute;
-    left: 22vw;
+    left: 21vw;
 }
 .comment-form {
     position: relative;
@@ -100,7 +100,7 @@ nav span{
     border-radius: 50%;
     object-fit: cover;
     max-width: 100%;
-    left:22vw;
+    left:20vw;
     top: 3vw; 
     border: 0.1vw solid white;
 }
@@ -113,28 +113,22 @@ nav span{
     transform: translateY(0,-50%);
     position: relative;
 }
-input {
+textarea {
     width: 51%;
     background-color: rgba(217, 217, 217, 0);
     border: 0.1vw solid white;
     border-radius: 0.5vw;
     height: 5vw;
-    top: 1vw;
-    left: 23vw;
+    top: 3vw;
+    left: 22vw;
     position: relative;
     transition: background-color 0.3s;
     color: #FFFFFF; 
     font-size: 1.6vw; 
 }
-input:hover {
+textarea:hover {
     background-color: rgba(217, 217, 217, 0.15); 
     font-size: 1.6vw;
-}
-.button-container
-{
-    position: relative;
-    top: 0; 
-    left: 0;
 }
 .button-blog
 {
@@ -143,21 +137,20 @@ input:hover {
     background-color:rgba(217, 217, 217, 0) ;
     color: #fff; 
     border-radius: 0.5vw;
-    width: 7%;
+    width: 8vw;
     height: 3vw;
     font-size: 1.4vw;
     font-family: Meri-San;
-    margin: 0.2vw;
+    margin: 0.35vw;
+    top: 9.3vw;
 }
-#Send
+#send
 {
-    top: 2vw;
-    left: 72vw;
+    left: 69vw;
 }
-#Cancel
+#cancel
 {
-    top:2vw;
-    left: 64vw;
+    left: 60vw;
 }
 .button-blog:hover
 {
@@ -168,7 +161,7 @@ input:hover {
 .comment-item {
     display: flex;
     align-items: flex-start;
-    margin-top: 1vw;
+    margin-top: 5vw;
     padding-top: 2vw;
     padding-left: 22vw;
     border-bottom: 0.1vw;
@@ -179,7 +172,7 @@ input:hover {
 }
 .comment-avatar {
     width: 4vw;
-    height: 4vw;
+    height: 4v;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 1vw;
@@ -200,7 +193,7 @@ input:hover {
 .comment-timestamp {
     font-size: 1vw;
     color: #B0B0B0;
-    top: 0.1vw;
+    top: 1vw;
 }
 .comment-text {
     padding-top: 0.2vw;
@@ -280,14 +273,12 @@ hr{
         transform: translate(0,-50%);
 
     }
-    #logo{
-        width:4em;
-    }
-    #log-sign{
-        right:-1rem;
-    }
     header{
         height:60px;
+    }
+    #space
+    {
+        height:500px;
     }
 }
 /* Tablet */
@@ -350,7 +341,10 @@ hr{
     #log-sign{
         right:0.5vw;
     }
-
+    #banner
+    {
+        height: -300px;
+    }
 }
 /* Desktop */
 @media screen and (min-width:1024px){

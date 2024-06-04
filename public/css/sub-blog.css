@@ -155,20 +155,20 @@ nav span{
     transform: translateY(0,-50%);
     position: relative;
 }
-input {
+textarea {
     width: 51%;
     background-color: rgba(217, 217, 217, 0);
     border: 0.1vw solid white;
     border-radius: 0.5vw;
     height: 5vw;
-    top: 1vw;
+    top: 3vw;
     left: 22vw;
     position: relative;
     transition: background-color 0.3s;
     color: #FFFFFF; 
     font-size: 1.6vw; 
 }
-input:hover {
+textarea:hover {
     background-color: rgba(217, 217, 217, 0.15); 
     font-size: 1.6vw;
 }

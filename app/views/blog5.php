@@ -20,7 +20,7 @@
     <?php 
         require_once "header.php"; 
         require_once "../models/PostId.php"; 
-        $postDetails = getPost(28);
+        $postDetails = getPost(5);
     ?>
     <div id="space">
         <h1><?php echo htmlspecialchars($postDetails['title']); ?></h1>
@@ -41,7 +41,17 @@
             <div id="number"><?php echo $current_post_comment_count; ?></div> comment<?php echo ($current_post_comment_count !== 1) ? 's' : ''; ?>
         </div>
         <form class="comment-form" method="post" action="" id="comment-form">
-            <img src="/IS207.O21-DoAnNhom2/public/images&videos/user1.png" alt="Avatar" class="avatar">
+        <?php
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+            if (isset($_SESSION['avatar'])) {
+                $avatar = htmlspecialchars($_SESSION['avatar'], ENT_QUOTES, 'UTF-8');
+            } else {
+                $avatar = '/IS207.O21-DoAnNhom2/public/images&videos/user1.png';
+            }
+            ?>
+            <img src="<?php echo $avatar; ?>" alt="Avatar" class="avatar">
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($postDetails['id']); ?>">
             <textarea name="comment" placeholder="Leave a comment" class="comment-box" id="comment-box"></textarea>
             <button type="submit" id="send" name="send" class="button-blog">Send</button>
@@ -76,7 +86,7 @@
                         <img src="' . htmlspecialchars($avatar_src) . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
                         <div class="comment-details">
                             <span class="comment-username">' . htmlspecialchars($comment['username']) . '</span>
-                            <p class="comment-text">' . htmlspecialchars($comment['comment']) . '</p>
+                            <p class="comment-text" style="white-space: pre-wrap;">' . htmlspecialchars($comment['comment']) . '</p>
                             <span class="comment-timestamp">' . htmlspecialchars($comment['date']) . '</span>
                         </div>
                     </div>

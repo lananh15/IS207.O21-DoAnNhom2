@@ -21,6 +21,10 @@ body{
     font-family: Meri-regular;
     src: url(../../public/font/Blog/Merriweather-Regular.ttf);
 }
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
+}
 @font-face {
     font-family:Meri-San;
     src: url(../../public/font/Blog/MerriweatherSans-VariableFont_wght.ttf);
@@ -78,7 +82,7 @@ nav span{
     color: #FFFFFF;
     font-size:1.6vw;
     padding-left: 12.3em;
-    font-family:montserrat;
+    font-family:montserrat;;
 }
 #sign
 {
@@ -129,12 +133,14 @@ nav span{
     font-size: 1.8vw;
     position: absolute;
     left: 21vw;
+    font-family: Roboto;
 }
 .comment-form {
     position: relative;
     left: 0; 
-    top: 0;
-    padding-bottom: 3vw; 
+    top: 0; 
+    padding-bottom: 3vw;
+    
 }
 .avatar {
     position: relative;
@@ -149,12 +155,12 @@ nav span{
 }
 .comment-box::placeholder 
 {
-    padding-top: 1.5vw;
     padding-left: 2vw;
     font-size: 1.6vw;
-    font-family: Meri-San;
+    font-family: Roboto;
     color: #FFFFFF;
     position: relative;
+    padding-top:1.5vw;
 }
 textarea {
     width: 51%;
@@ -168,6 +174,7 @@ textarea {
     transition: background-color 0.3s;
     color: #FFFFFF; 
     font-size: 1.6vw; 
+    font-family: Roboto; 
 }
 textarea:hover {
     background-color: rgba(217, 217, 217, 0.15); 
@@ -183,7 +190,7 @@ textarea:hover {
     width: 8vw;
     height: 3vw;
     font-size: 1.4vw;
-    font-family: Meri-San;
+    font-family: Roboto;
     margin: 0.35vw;
     top: 9.3vw;
 }
@@ -230,7 +237,7 @@ textarea:hover {
 .comment-username {
     font-weight: bold;
     font-size: 1.6vw;;
-    font-family: Meri-regular;
+    font-family: Montserrat;
     color: #f8f9d1;
 }
 .comment-timestamp {
@@ -241,7 +248,8 @@ textarea:hover {
 .comment-text {
     padding-top: 0.2vw;
     font-size: 1.4vw;
-    font-family: Meri-San;
+    font-family: Roboto;
+    line-height: 2vw;
 }
 /* Footer */
 footer{

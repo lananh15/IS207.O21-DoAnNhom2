@@ -4,6 +4,7 @@ body{
     box-sizing: border-box;
     background-color: black;
     background-size: cover;
+    overflow-y: hidden;
 }
 
 @font-face{
@@ -44,17 +45,18 @@ main{
     width: 100vw;
     height: auto;
     object-fit: cover;
+    position: relative;
+    top: -0.6vw
 }
 
 
 #prevBtn,
 #nextBtn {
-    position: absolute; /* Đặt vị trí tuyệt đối để căn chỉnh */
-    top: 50%;
+    position: absolute;
     transform: translateY(-50%); 
     color: white;
     border: none;
-    padding: 1em;
+    padding: 0.5em;
     cursor: pointer;
     font-size: 2em;
     font-weight: bold;
@@ -68,11 +70,11 @@ main{
 
 
 #prevBtn {
-    left: 0.75em; /* Đặt nút Previous ở bên trái */
+    left: 1vw; /* Đặt nút Previous ở bên trái */
 }
 
 #nextBtn {
-    right: 0.75em; /* Đặt nút Next ở bên phải */
+    right: 1vw; /* Đặt nút Next ở bên phải */
 }
 
 
@@ -157,12 +159,6 @@ main{
         width:100%;
         left: 0;
         top:100px;
-    }
-    #logo{
-        width:6em;
-    }
-    #log-sign{
-        right:0.5vw;
     }
 }
 /* Desktop */

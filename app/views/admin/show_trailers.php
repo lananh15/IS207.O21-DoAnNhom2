@@ -11,7 +11,7 @@ if(isset($_POST['delete_comment'])){
    $comment_id = filter_var($comment_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $delete_comment = $conn->prepare("DELETE FROM `trailer_comments` WHERE id = ?");
    $delete_comment->execute([$comment_id]);
-   $message[] = 'Comment Delete!';
+   $message[] = 'Comment Deleted!';
 
 }
 

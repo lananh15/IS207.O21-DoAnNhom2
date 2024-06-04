@@ -92,6 +92,7 @@ nav span{
     position: relative;
     left: 0; 
     top: 0; 
+    padding-bottom: 3vw; 
 }
 .avatar {
     position: relative;

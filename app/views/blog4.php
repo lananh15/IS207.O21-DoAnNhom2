@@ -42,7 +42,7 @@
     </div>
     <div id="Main-content">
         <h2><?php echo $postDetails['title'] ?></h2>
-        <p id="content"><?php echo $postDetails['content'] ?></p>
+        <p id="content" style="white-space: pre-wrap;"><?php echo $postDetails['content'] ?></p>
        <div id="sign">
             <p id="author"><?php echo $postDetails['author'] ?></p>
             <p id="date"><?php echo $postDetails['date'] ?></p>

@@ -25,10 +25,9 @@
     <main>
         <div class="banner" id="banner">
             <a href="watch1.php"><img src="../../public/images&videos/Watch/Watch-animation/Inside out 1.png"
-                    alt="Insight out 1" onclick="toggleMovement('banner1')"></a>
+                    alt="Insight out 1"></a>
             <a href="watch2.php"><img src="../../public/images&videos/Watch/Watch-animation/Inside out 2.png"
-                    alt="Insight out 2" onclick="toggleMovement('banner2')"></a>
-    
+                    alt="Insight out 2"></a>
             <button id="prevBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" weight="bold" fill="currentColor"
                     class="bi bi-chevron-left" viewBox="0 0 16 16">

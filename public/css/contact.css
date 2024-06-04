@@ -18,6 +18,10 @@ body{
     font-family: merriweathersans;
     src:url(../../public/font/Contact/MerriweatherSans-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: roboto;
+    src: url(../../public/font/Home/Roboto-Regular.ttf);
+}
     
 
 nav span{
@@ -46,17 +50,18 @@ nav span{
 }
 
 .contact .content h2{
-    font-size: 6vw;
+    font-size: 4vw;
     font-weight: 500;
     font-family: insideout;
     color:#fff;
+    margin-top: 0px;
 }
 .container{
     width:100%;
     display:flex;
     justify-content:center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 .container .contactInfo{
     width:50%;
@@ -106,6 +111,7 @@ nav span{
 .container .contactInfo .box .text{
     display:flex;
     margin-left: 20px;
+    padding-left: 5px;
     font-size: 16px;
     color: #fff;
     flex-direction: column;
@@ -116,17 +122,17 @@ nav span{
 }
 .container .contactInfo .box .text h3{
     font-weight: 500;
-    font-family: loravariable;
+    font-family: roboto;
 }
 .container .contactInfo .box .text p{
-    font-family:merriweathersans;
+    font-family:roboto;
 }
 
 .contactForm{
     position: relative;
     width:380px;
-    height:380px;
-    padding: 40px;
+    height:350px;
+    padding: 35px;
     background:#fff;
     border-radius: 8px;
     overflow:hidden;
@@ -137,7 +143,7 @@ nav span{
     top:-50%;
     left:-50%;
     width:380px;
-    height:380px;
+    height:350px;
     background: linear-gradient(0deg,transparent,
     transparent,#45f3ff,#45f3ff,#45f3ff);
     transform-origin: bottom right;
@@ -155,7 +161,7 @@ nav span{
     top:-50%;
     left:-50%;
     width:380px;
-    height:380px;
+    height:350px;
     background: linear-gradient(0deg,transparent,
     transparent,#ff2770,#ff2770,#ff2770);
     transform-origin: bottom right;
@@ -176,7 +182,7 @@ nav span{
     z-index: 2;
     inset:4px;
     background:linear-gradient(45deg,#011D42,#0F2749,#162D4C,#2A3956);
-    padding: 50px 40px;
+    padding: 40px 40px;
     border-radius: 8px;
 }
 
@@ -203,6 +209,7 @@ nav span{
     border-radius: 6px;
     outline: none;
     resize:none;
+    font-family: roboto;
 }
 .contactForm .inputBox span{
     position:absolute;
@@ -212,7 +219,8 @@ nav span{
     margin: 10px 0;
     pointer-events: none;
     transition:0.5s;
-    color:#666
+    color:#666;
+    font-family: roboto;
 }
 .contactForm .inputBox input:focus ~ span,
 .contactForm .inputBox input:valid ~ span,
@@ -234,55 +242,6 @@ nav span{
     font-size: 18px;
 }
 
-.question{
-    position:relative;
-    min-height: 100vh;
-    padding: 40px 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.question .content{
-    max-width: 800px;
-    text-align: center;
-}
-.question .content h2{
-    font-size: 3em;
-    font-weight: 500;
-    font-family: insideout;
-    color:#fff;
-}
-.container .questionInfo{
-    width:50%;
-    display:flex;
-    flex-direction: column;
-    margin: 0 auto;
-    text-align: center; 
-}
-.container .questionInfo .box{
-    position:relative;
-    padding: 10px 0;
-    display: flex;
-    color: #fff;
-
-}
-.questionInfo .box p{
-    display:flex;
-    font-size: 1.8em;
-    margin-left: 100px;
-    font-family:loriavariable;
-    flex-direction: column;
-    font-weight: 300;
-}
-.fa-solid.fa-arrow-up-right-from-square { color: white; }
-.questionimg{
-    position: relative;
-}
-.questionimg img {
-    width: 50%; 
-}
-
 .social{
     display: flex; 
     justify-content: center; 
@@ -302,7 +261,7 @@ nav span{
 .social .content p { 
     margin-top: 20px; 
     font-size: 1.2em;
-    font-family: loravariable;
+    font-family: roboto;
 }
 
 .social ul { 
@@ -395,6 +354,33 @@ footer img{
     justify-content: center;
     align-items: center;
 }
+
+.alert-success{
+    z-index: 1;
+    background: #D4EDDA;
+    font-size: 18px;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: fixed;
+    right: 0;
+    top: 10px;
+    border-left: 8px solid #3AD66E;
+    border-radius: 4px;
+  }
+  
+  .alert-error{
+    z-index: 1;
+    background: #FFF3CD;
+    font-size: 18px;
+    padding: 20px 40px;
+    min-width: 420px;
+    position: fixed;
+    right: 0;
+    top: 10px;
+    border-left: 8px solid #FFA502;
+    border-radius: 4px;
+  }
+
 footer a{
     color:white;
     display:inline;
@@ -492,12 +478,6 @@ hr{
         transform: translateX(-50%);
         top:330px;
     }
-    #logo{
-        width:6em;
-    }
-    #log-sign{
-        right:0.5vw;
-    }
 }
 /* Desktop */
 @media screen and (min-width:1024px){
@@ -505,7 +485,7 @@ hr{
         max-height:80px;
     }
 } 
-@media screen and (max-width:991px){
+@media screen and (max-width:1024px){
     .contact{
         padding: 50px;
     }
@@ -515,19 +495,72 @@ hr{
     .container .contactInfo{
         margin-bottom: 30px;
     }
-    .container .questionInfo {
-        width:100%;
+}
+@media only screen and (max-width: 414px) { 
+    .contact .container {
+        flex-direction: column;
+        align-items: center;
     }
-    .questionInfo .box { 
-        justify-content: center; 
-        align-items: center; 
-        margin: 0 auto; 
+
+    .contactInfo, .contactForm {
+        padding: 5px;
+        width: 100%;
     }
-    .questionInfo .box p{
-        margin-left: 0px;
+
+    .contactInfo .box {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 15px;
     }
-    .container .questionimg {
-        width:100%;
-        display: contents;
+
+    .contactInfo .box .icon {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .contactInfo .box .text {
+        font-size: 16px;
+    }
+
+    .contactInfo .box .text h3 {
+        font-size: 18px;
+    }
+
+    .contactInfo .box .text p {
+        font-size: 14px;
+    }
+    .contactForm form {
+        padding:30px 40px;}
+    .contactForm .inputBox { 
+        margin-top: 0px;}
+    .contactForm .inputBox input[type="submit"] {
+        max-width: 100%;
+        font-size: 16px;
+        padding: 0px;
+    }
+    .contactForm .inputBox input,
+    .contactForm .inputBox textarea {
+        font-size: 14px;
+    }
+
+    .contactForm .inputBox span {
+        font-size: 14px;
+    }
+
+    .contactForm .inputBox input:focus ~ span,
+    .contactForm .inputBox input:valid ~ span,
+    .contactForm .inputBox textarea:focus ~ span,
+    .contactForm .inputBox textarea:valid ~ span {
+        font-size: 12px;
+    }
+    .social {
+        padding: 20px;
+    }
+    .social ul {
+        flex-direction: column;
+    }
+    .social ul li {
+        margin: 10px 0;
     }
 }

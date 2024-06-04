@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/normalize.css" />
     <link rel="stylesheet" 
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/home.css" />
-    <script src="menu.js"></script>
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/home.css" />
     <!-- PC screen -->
     <!-- <link rel="stylesheet" type="text/css" media="(min-width:1024px)" href="home.css" /> -->
     <title>Home</title>
@@ -42,7 +41,7 @@
             </p>
         </div>
         <div>
-            <img src="../../public/images&videos/Home/isslands 1.png" width="50%">
+            <img src="/IS207.O21-DoAnNhom2/public/images&videos/Home/isslands 1.png" width="50%">
         </div>
     </div>
     <div id="short-gif">
@@ -51,7 +50,7 @@
             <h3>Meet the little voices</h3>
             <h3>inside your head ! !</h3>
         </div>
-        <img src="../../public/images&videos/Home/insideout-bg.gif" width="100%">
+        <img src="/IS207.O21-DoAnNhom2/public/images&videos/Home/insideout-bg.gif" width="100%">
     </div>
     <div id="char-container">
         <?php
@@ -63,7 +62,7 @@
         <h3>Inside Out 2 is coming to cinema on June 14th 2024!</h3>
         <div id="video-container">
             <video muted autoplay loop>
-                <source src="../../public/images&videos/Home/video.mp4">
+                <source src="https://dl.dropboxusercontent.com/scl/fi/jkbplrc6jsys6mqhs1t4y/video.mp4?rlkey=cf3tx41pa633ovklej1sbrf5r&st=6335xjhp&dl=0">
             </video>
         </div>
     </div>
@@ -71,10 +70,10 @@
         <h3 style="padding-top:5vw">Haven't watched the movie yet?<br>
                                     Inside Out (2015) is now available on our website!
         </h3>
-        <img src="../../public/images&videos/Home/INSIDEOUT1 2.png">
+        <img src="/IS207.O21-DoAnNhom2/public/images&videos/Home/INSIDEOUT1 2.png">
         <input type="button" value="Click here" id="watch-btn">
         <div id="award">
-            <h2>Award</h2>
+            <h2>AWARD</h2>
             <h4>The awards below are for Inside Out (2015)</h4>
             <p>
                 BEST ANIMATED FEATURE<br><br>
@@ -85,7 +84,7 @@
         </div>
     </div>
     <?php require_once "footer.php" ?>
-    <script src="../../public/js/home.js"></script>
+    <script src="/IS207.O21-DoAnNhom2/public/js/home.js"></script>
 </body>
 
 </html>

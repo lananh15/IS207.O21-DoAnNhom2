@@ -122,7 +122,7 @@ function validateUsername() {
                 }
             }
         };
-        xhttp.open("POST", "../../controllers/CheckUsername.php", true);
+        xhttp.open("POST", "/IS207.O21-DoAnNhom2/app/controllers/CheckUsername.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("username=" + username.value);
     });
@@ -154,7 +154,7 @@ function validateEmail() {
                 }
             }
         };
-        xhttp.open("POST", "../../controllers/CheckEmail.php", true);
+        xhttp.open("POST", "/IS207.O21-DoAnNhom2/app/controllers/CheckEmail.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("email=" + email.value);
     });
@@ -207,7 +207,6 @@ async function sha256(message) {
 signupBtn.addEventListener("click", async function(event) {
     event.preventDefault();
     document.getElementById("loading").style.display = "flex";
-
     if (await validateForm()) {
         const formData = new FormData(document.querySelector("form"));
         formData.delete('password');
@@ -218,7 +217,7 @@ signupBtn.addEventListener("click", async function(event) {
         const hashedConfirmPassword = await sha256(cfpassword.value);
         formData.append('password', hashedPassword);
         formData.append('confirmpassword', hashedConfirmPassword);
-        formData.append('signup', 'SIGN UP');
+        formData.append('signup', 'SIGNUP');
 
         const form = document.createElement('form');
         form.method = 'POST';
@@ -235,6 +234,9 @@ signupBtn.addEventListener("click", async function(event) {
 
         document.body.appendChild(form);
         form.submit();
+    }
+    else{
+        document.getElementById("loading").style.display = "none";
     }
 });
 

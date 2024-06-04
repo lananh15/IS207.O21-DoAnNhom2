@@ -1,14 +1,14 @@
 const cards=document.querySelectorAll(".card");
 const charpng=[
-    "../../public/images&videos/Home/joypng.jpg",
-    "../../public/images&videos/Home/sadnesspng.jpg",
-    "../../public/images&videos/Home/fearpng.jpg",
-    "../../public/images&videos/Home/disgustpng.jpg",
-    "../../public/images&videos/Home/angerpng.jpg",
-    "../../public/images&videos/Home/embarrassmentpng.webp",
-    "../../public/images&videos/Home/ennuipng.webp",
-    "../../public/images&videos/Home/anxietypng.jpg",
-    "../../public/images&videos/Home/envypng.webp",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/joypng.jpg",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/sadnesspng.jpg",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/fearpng.jpg",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/disgustpng.jpg",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/angerpng.jpg",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/embarrassmentpng.webp",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/ennuipng.webp",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/anxietypng.jpg",
+    "/IS207.O21-DoAnNhom2/public/images&videos/Home/envypng.webp",
 ];
 cards.forEach((card,index) => {
     var beforeElement = document.createElement('div');
@@ -23,12 +23,19 @@ cards.forEach((card,index) => {
     beforeElement.style.width = '20vw';
     card.appendChild(beforeElement);
     
-    if(index===5){
+    if (index===2 || index===8){
         card.addEventListener('mouseover', () => {
-        beforeElement.style.opacity = '1';
-        beforeElement.style.zIndex= '1';
-        beforeElement.style.transform = 'translateX(95%)';
-    });
+            beforeElement.style.opacity = '1';
+            beforeElement.style.zIndex= '1';
+            beforeElement.style.transform = 'translateX(40%)';
+        });
+    }
+    else if(index===5){
+        card.addEventListener('mouseover', () => {
+            beforeElement.style.opacity = '1';
+            beforeElement.style.zIndex= '1';
+            beforeElement.style.transform = 'translateX(43%)';
+        });
     }
     else if(index===7){
         card.addEventListener('mouseover', () => {
@@ -42,7 +49,7 @@ cards.forEach((card,index) => {
             beforeElement.style.opacity = '1';
             beforeElement.style.zIndex= '1';
             beforeElement.style.transform = 'translateX(60%)';
-    });
+        });
     } 
     card.addEventListener('mouseout', () => {
         beforeElement.style.opacity = '0';
@@ -50,4 +57,7 @@ cards.forEach((card,index) => {
     });
     
 });
-
+let watchBtn=document.getElementById("watch-btn");
+watchBtn.addEventListener("click",function(){
+    window.location.href="watch1.php";
+})

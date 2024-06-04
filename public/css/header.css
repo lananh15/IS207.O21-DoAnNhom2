@@ -80,7 +80,7 @@ nav{
 #log-sign p{
     color:white;
     display:inline-block;
-    font-size:16px;
+    font-size:1.1em;
     margin-right:10px;
 }
 #log-sign #avt{
@@ -98,6 +98,7 @@ button{
     height:35px;
     background-color: transparent;
     border:1px solid #33adff;
+    transition: all 0.3s ease-in-out;
 }
 button a{
     font-size: 16px;
@@ -108,13 +109,16 @@ button a{
 }
 button:hover{
     background-color: #189ffa; 
-
+    cursor: pointer;
+    transform:scale(0.9);
 }
+
+
 #check {
     display: none;
 }
 .checkbtn {
-    font-size: 4vw;
+    font-size: 3.5vw;
     color: white;
     float: right;
     line-height: 75px;
@@ -144,9 +148,6 @@ button:hover{
     }
     #log-sign{
         right:-0.8rem;
-    }
-    #log-sign p{
-        font-size:10px;
     }
     header{
         height:30px;
@@ -221,10 +222,8 @@ button:hover{
         width:6em;
     }
     #log-sign{
-        right:-1rem;
+        right:-1.3rem;
     }
-    #log-sign p{
-        font-size:12px;
-    }
+
 }
 

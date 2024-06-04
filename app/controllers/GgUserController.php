@@ -19,15 +19,14 @@
             if ($stmt_check_email) {
                 // If exist, update information
                 if ($stmt_check_email->rowCount() > 0) {
-                    $sql_update = "UPDATE users SET username = :email, avatar = :avatar WHERE email = :email";
+                    $sql_update = "UPDATE users SET username = :username, avatar = :avatar WHERE email = :email";
                     $stmt_update = $conn->prepare($sql_update);
                     $stmt_update->bindParam(':username', $username, PDO::PARAM_STR);
                     $stmt_update->bindParam(':avatar', $avatar, PDO::PARAM_STR);
                     $stmt_update->bindParam(':email', $email, PDO::PARAM_STR);
 
                     if (!$stmt_update->execute()) {
-                        // Xử lý lỗi khi thực hiện truy vấn UPDATE
-                        // Ví dụ: ghi log, hiển thị thông báo cho người dùng
+                        
                     }
                 } else {
                     // If doesn't exist, insert new user

@@ -131,17 +131,50 @@ function validateForm() {
                 }
             }
         };
-        xhttp.open("POST", "../../controllers/CheckEmail.php", true);
+        xhttp.open("POST", "../controllers/CheckEmail.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("email=" + email.value);
     });
 }
-
+async function sha256(message) {
+    const msgBuffer = new TextEncoder().encode(message);                    
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
 password.addEventListener("input",validatePassword);
 submitBtn.addEventListener("click", async function(event) {
     event.preventDefault(); 
+    document.getElementById("loading").style.display = "flex";
+
     if (await validateForm()) {
-        document.querySelector("form").submit();
+        const formData = new FormData(document.querySelector("#form"));
+        formData.delete('newpassword');
+        formData.delete('confirmnewpassword');
+
+        const hashedPassword = await sha256(password.value);
+        formData.append('newpassword', hashedPassword);
+        formData.append('confirmnewpassword', hashedPassword);
+        formData.append('submitBtn', 'Submit');
+
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'forgetpassword.php';
+        form.style.display = 'none';
+
+        for (const [key, value] of formData.entries()) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            form.appendChild(input);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
     }
 });
+
 

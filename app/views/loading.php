@@ -1,4 +1,3 @@
-
 <div id="loading">
     <div class="loader">
         <span style="--i:1"></span>

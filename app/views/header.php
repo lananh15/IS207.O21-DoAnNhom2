@@ -14,20 +14,32 @@
                 <span></span>
             </ul>
             <div id='logo-container'>
-                <img src='../../public/images&videos/logo.png' id='logo'>
+                <img src='/IS207.O21-DoAnNhom2/public/images&videos/logo.png' id='logo'>
             </div>
             <div id='log-sign'>";
+            if (session_status() == PHP_SESSION_NONE) {
                 session_start();
+            }      
 
                 if (isset($_SESSION['username']) && isset($_SESSION['avatar'])) {
                     $username = htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8');
-                    echo "<p>" . "Welcome, $username!" . "</p>";
+                    echo "<p>" . $username . "</p>";
                     $avatar = htmlspecialchars($_SESSION['avatar'], ENT_QUOTES, 'UTF-8');
-                    echo "<a href='account.php' id='avt'><img src='" . $avatar . "'></a>";
+
+                    require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/config/database.php';
+                    $sql_check_admin=$conn->prepare("SELECT * FROM users WHERE username= :username");
+                    $sql_check_admin->bindParam(":username", $username,PDO::PARAM_STR);
+                    if($sql_check_admin->execute()>0 && $username==='admin123'){
+                        echo "<a href='admin/dashboard.php' id='avt'><img src='" . $avatar . "'></a>";
+                    }
+                    else{
+                        echo "<a href='profile.php' id='avt'><img src='" . $avatar . "'></a>";
+                    }
+                    $password = htmlspecialchars($_SESSION['password'], ENT_QUOTES, 'UTF-8');
                 } 
                 else {
-                    echo '<button><a href="login-signup/login.php">Log in</a></button>&nbsp;';
-                    echo '<button><a href="login-signup/signup.php">Sign up</a></button>';      
+                    echo '<button id="login-signup"><a href="login.php">Login</a></button>&nbsp;';
+                    echo '<button id="login-signup"><a href="signup.php">Signup</a></button>';      
                 }
             echo "</div>
         </nav>

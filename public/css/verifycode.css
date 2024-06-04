@@ -1,0 +1,116 @@
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Roboto-Regular.ttf);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+body{
+    background-image: url(../images&videos/log-sign.jpg);
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+section{
+    display:grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    width: 80vw;
+    max-width: 500px;
+    height: auto;
+    background-color: #222222;
+    border: 2px solid rgb(255, 255, 255,0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgb(17, 17, 26) 0px 8px 24px, rgb(17, 17, 26) 0px 16px 48px;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-size: 2.5rem;
+    color: #33adff;
+}
+h3{
+    font-size: 1rem;
+    color:white;
+    margin: 1rem 0;
+}
+#vcode{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 300px; 
+    height: 3rem;
+    font-size: 1.2rem;
+    outline: none;
+    margin: 1rem;
+}
+#submit{
+    outline:none;
+    border:none;
+    font-size: 1rem;
+    width: 6.5rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    background-color: #33adff;
+    color:white;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: #13a0ff;
+}
+
+@media (max-width: 768px) {
+    section {
+        width: 90vw;
+         padding: 15px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 0.9rem;
+    }
+    #vcode {
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+    #submit {
+        font-size: 0.9rem;
+        width: 6rem;
+        height: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        width: 95vw;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h3 {
+        font-size: 0.8rem;
+    }
+    #vcode {
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+    #submit {
+        font-size: 0.8rem;
+        width: 5rem;
+        height: 1.8rem;
+    }
+}

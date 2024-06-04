@@ -1,0 +1,337 @@
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    background-image: url(/IS207.O21-DoAnNhom2/public/images&videos/sao-1.png);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: hidden;
+}
+@font-face{
+    font-family:insideout;
+    src:url(/IS207.O21-DoAnNhom2/public/font/InsideOut4.otf);
+}
+nav span{
+    position:absolute;
+    top:17%;
+    width:4.5em;
+    height:66%;
+    background: transparent;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#menu li:first-child:hover~span {
+    width:4.5em;
+    left: 0.5em;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+}
+
+#menu li:nth-child(2):hover~span {
+    width:4.5em;
+    left: 6.5em;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+}
+
+#menu li:nth-child(3):hover~span {
+    left: 12.2em;
+    width:4.5em;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+}
+
+#menu li:nth-child(4):hover~span {
+    width:5em;
+    left: 18.3em;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+}
+
+#menu li:nth-child(5):hover~span {
+    width:6em;
+    left: 25.2em;
+    background: linear-gradient(45deg, #192e4f,#33adff);
+}
+h2 {
+    color:white;
+    font-family: insideout;
+    font-size:2.5em;
+    font-weight:normal;
+    text-align:center;
+}
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height:100vh;
+    justify-content: center;
+}
+#editAvt{
+    position:absolute;
+    top:30%;
+    display:grid;
+    place-items: center;
+    left:18vw;
+    justify-self: center;
+    top:30%;
+    font-size:1vw;
+
+}
+#editAvt img{
+    border-radius:50%;
+    width:10em;
+    margin-bottom:2vw;
+}
+#changeAvt{
+    display: none;
+}
+#editAvt button{
+    background-color:transparent;
+    color:white;
+    border-radius:5px;
+    font-size:1em;
+    width:11em;
+    height:2.5em;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid white;
+    padding-top:0.2em;
+}
+#editAvt button:hover{
+    background-color:#3885ff;
+}
+#editprofile{
+    display:inline-block;
+    position: absolute;
+    top:9%;
+    right:20%;
+    width:30em;
+    height:100vh;
+    font-size:1vw;
+}
+h2{
+    color:white;
+    font-family: insideout;
+    font-size:3em;
+    margin-bottom:4vw;
+    margin-top:5vw;
+}
+.inputbox label{
+    position: absolute;
+    color:white;
+    display:block;
+    font-size:1.6em;
+    top:0;
+    margin-bottom:1em;
+    margin-top:-1.5em;
+}
+.inputbox{
+    position:relative;
+    margin-top:3.5em;
+    width:30em;
+    border:1px solid white;
+    border-radius:10px;
+    height:3.5em;
+}
+.inputbox input{
+    position:absolute;
+    background-color:transparent;
+    outline:none;
+    border:none;
+    color:white;
+    width: 85%;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:1.5em;
+    overflow: hidden;
+    pointer-events: none;
+}
+.inputbox i{
+    display:flex;
+    color:white;
+    width:20%;
+    top:1em;
+    right:-28%;
+    cursor: pointer;
+    position:absolute;
+}
+.inputbox input:focus ~ label{
+    color:#94bdff;
+}
+
+.button{
+    border-radius:5px;
+    font-size:1.1em;
+    width:14vw;
+    height:2.6em;
+    border:1px solid white;
+    cursor: pointer;
+    background-color:transparent;
+    color:white;
+    margin-top:15px;
+}
+#cancel:hover{
+    background-color: #ffffff0e;
+}
+#submitBtn{
+    position:absolute;
+    right:0;
+    background-image: linear-gradient(to bottom, #77AAFB, #1250B0);
+    border:none;
+}
+#submitBtn:hover{
+    background-image: linear-gradient(to bottom, #5797ff, #0a4eb5);
+}
+#email{
+    pointer-events: none;
+
+}
+.error-message{
+    color:rgb(255, 37, 37);
+    font-size:0.9em;
+    height:6px;
+    margin-top:5px;
+}
+
+#hidepass, #showpass{
+    right:-3.5em;
+    top:1.3em;
+}
+#password{
+    width:18em;
+}
+
+/* Smartphone */
+@media screen and (max-width:767px){
+    li a{
+        font-size:13px;
+    }
+    button{
+        height:25px;
+        width:65px;
+    }
+    button a{
+        font-size:10px;
+    }
+    #logo-container{
+        left:0;
+        transform: translate(0,-50%);
+
+    }
+    #logo{
+        width:4em;
+    }
+    #log-sign{
+        right:-1rem;
+    }
+    header{
+        height:60px;
+    }
+    #container {
+        flex-direction: column;
+    }
+
+    #editAvt {
+        position: static;
+        justify-self: center;
+        margin-top: 30vw;
+    }
+
+    #editprofile {
+        position: static;
+        width: 100%;
+    }
+
+    .inputbox {
+        width: 70%;
+        height: 6em;
+        margin: 3em auto 20px auto;
+        
+    }
+    .inputbox input{
+        pointer-events: auto;
+        top:-0.5vw;
+        font-size:3em;
+    }
+    .inputbox .fa-regular{
+        display:none;
+    }
+    #hidepass, #showpass{
+        right:-2em;
+    }
+    .button {
+        display: flex;
+        width: 40%;
+        justify-content: center;
+        margin: 3em auto 0 auto;
+    }
+    .error-message{
+        text-align: center;
+        font-size:1.5em;
+    }
+    #submitBtn {
+        position: static;
+        margin-top: 10px;
+    }
+    
+}
+
+/* Tablet */
+@media screen and (max-width:1070px) {
+    #check:checked~ul {
+        left: 0;
+    }
+    .checkbtn {
+        display: block;
+    }
+    #menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left:-100%;
+        text-align: center;
+        transition: all .5s;
+        display:block;
+        background-color: #222222;
+    }
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    nav span{
+        display:none;
+        
+    }
+    #menu li:first-child a:hover,
+    #menu li:nth-child(2) a:hover,
+    #menu li:nth-child(3) a:hover,
+    #menu li:nth-child(4) a:hover,
+    #menu li:nth-child(5) a:hover {
+        color:#66C2EF;
+    }
+    #menu li:first-child:hover~span,
+    #menu li:nth-child(2):hover~span,
+    #menu li:nth-child(4):hover~span,
+    #menu li:nth-child(5):hover~span {
+        top:180px;
+        left:0;
+        background: linear-gradient(45deg, #192e4f,#33adff);
+        width:100%;
+    }
+    #logo{
+        width:6em;
+    }
+    #log-sign{
+        right:0.5vw;
+    }
+    
+
+}
+/* Desktop */
+@media screen and (min-width:1024px){
+    header{
+        max-height:80px;
+    }
+} 

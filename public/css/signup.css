@@ -154,6 +154,7 @@ hr{
 }
 #signup-btn:hover{
     background-color: #13a0ff;
+    cursor: url(/IS207.O21-DoAnNhom2/public/images&videos/icons8-cursor-24.png), auto;
 }
 .login{
     display: flex;

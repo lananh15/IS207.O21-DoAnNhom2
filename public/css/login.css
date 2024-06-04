@@ -1,7 +1,12 @@
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Roboto-Regular.ttf);
+}
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: Roboto;
 }
 body{
     background-image: url(../images&videos/log-sign.jpg);
@@ -153,6 +158,7 @@ hr{
 }
 #login-btn:hover{
     background-color: #13a0ff;
+    cursor: url(/IS207.O21-DoAnNhom2/public/images&videos/icons8-cursor-24.png), auto;
 }
 
 .register{

@@ -5,24 +5,28 @@ body{
 }
 @font-face{
     font-family:insideout;
-    src:url(../../public/font/InsideOut4.otf);
+    src:url(/IS207.O21-DoAnNhom2/public/font/InsideOut4.otf);
 }
 @font-face{
     font-family:disney1;
-    src:url(../../public/font/Home/Disney.ttf);
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Disney.ttf);
 }
 @font-face{
     font-family:pixar;
-    src:url(../../public/font/Home/Pixar.ttf);
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Pixar.ttf);
 }
 @font-face{
     font-family: imprintmtshadow;
-    src:url(../../public/font/Home/imprintmtshadow.ttf);
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/imprintmtshadow.ttf);
 
 }
 @font-face{
     font-family: bookos;
-    src:url(../../public/font/Home/BOOKOS.TTF);
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/BOOKOS.TTF);
+}
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Roboto-Regular.ttf);
 }
 nav span{
     position:absolute;
@@ -111,12 +115,12 @@ h1:before {
     position:relative;
     display:grid;
     grid-template-columns: 48% 52%;
-    grid-template-rows: 35vw;
+    grid-template-rows: 36vw;
     background-color: black;
 }
 #short-about h3{
     font-size: 3.5vw;
-    margin: 4vw 0 0 0;
+    margin: 6vw 0 0 0;
     display: inline-block;
     color: #EE9D64;
     font-family: insideout !important;
@@ -124,19 +128,19 @@ h1:before {
 }
 #short-about p{
     width:40vw;
-    margin:0 2vw 0 6vw;
+    margin:0.5vw 2vw 0 6vw;
     text-align:left;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     display: inline-block;
     color: white;
-    font-family: Times New Roman;
+    font-family: Roboto;
     font-weight: normal;
 }
 #short-about img{
     position: relative;
     right:0;
     width:80%;
-    top:8vw;
+    top:7vw;
 
 }
 
@@ -185,7 +189,7 @@ h1:before {
 /* 9 manh ghep cam xuc */
 #char-container{
     background-color: #1C0C0B;
-    background-image: url(../../public/images&videos/Home/bg-emotions.png);
+    background-image: url(/IS207.O21-DoAnNhom2/public/images&videos/Home/bg-emotions.png);
     background-size: cover;
     height:80%;
     display:grid;
@@ -251,6 +255,7 @@ h1:before {
 }
 .content p{
     font-size:1.2vw;
+    font-family: Roboto;
 }
 .card:hover .content {
     opacity: 1;
@@ -288,7 +293,7 @@ h1:before {
     display:block;
 }
 #video-container{
-    background-image: url(../../public/images&videos/Home/bg-sneakpeek.png);
+    background-image: url(/IS207.O21-DoAnNhom2/public/images&videos/Home/bg-sneakpeek.png);
     background-size: cover; 
     width:100%;
     display:flex;

@@ -20,23 +20,22 @@ nav span{
 /* Main */
 main {
     color: white;
+    margin-bottom: -15vw;
 }
 
 #banner {
     position: relative;
-    top: 4vw;
-    width: 100vw;
-    height: 49vw;
-
+    bottom: 3vw;
+    width: 98.7vw;
+    height: 50vw;
 }
 
 #poster {
     position: relative;
-    top: -38vw;
     left: 5vw;
-    height: 32vw;
+    height: 30vw;
     width: 20.7vw;
-    height: 28.8vw;
+    bottom: 44vw;
 }
 
 #tags {
@@ -47,7 +46,7 @@ main {
     row-gap: 4vw;
     width: 32vw;
     left: 35vw;
-    top: -47vw;
+    bottom: 53vw;
     font-weight: 700;
     font-size: 1.7vw;
     column-gap: 3.5vw;
@@ -71,14 +70,14 @@ main {
     text-align: center;
     position: relative;
     left: 5vw;
-    top: -51vw;
+    bottom: 57.5vw;
     width: 21vw;
-    height: 4.78vw;
     border: 0.05vw solid white;
     font-family: inknutantiqua;
     height: 4.1vw;
     border-radius: 0.52vw;
     color: white;
+    cursor: pointer;
 }
 
 #duration {
@@ -87,7 +86,7 @@ main {
     grid-template-columns: repeat(2, 1fr); 
     left: 37vw;
     width: 12vw;
-    top: -50vw;
+    bottom: 57vw;
     font-weight: 700;
     font-size: 1.7vw;
     column-gap: 1.5vw;
@@ -116,7 +115,7 @@ svg{
     grid-template-rows: repeat(3, 1fr);
     position: relative;
     left: 5vw;
-    bottom: 41vw;
+    bottom: 48vw;
     width: 28vw;
     row-gap: 1.7vw;
     font-weight: 600;
@@ -125,7 +124,7 @@ svg{
 }
 
 #description {
-    font-size: 2.2vw;
+    font-size: 2vw;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
     line-height: 2.9vw;
@@ -134,7 +133,7 @@ svg{
     left: 50%;
     transform: translate(-50%);
     height: 14.5vw;
-    bottom: 38vw;
+    bottom: 44vw;
 }
 
 #cast, #trailer {
@@ -151,7 +150,7 @@ svg{
 #cast {
     position: relative;
     left: 5vw;
-    bottom: 27vw;
+    bottom: 40vw;
     width: 40vw;
 }
 
@@ -161,7 +160,7 @@ svg{
     position: relative;
     width: 93.15vw;
     left: 5vw;
-    bottom: 27vw;
+    bottom: 40vw;
 }
 
 #casts-info div img{
@@ -193,7 +192,7 @@ svg{
     top: 2vw;
 }
 
-#adele {
+#Adèle-Exarchopoulos {
     position: relative;
     right: 1.3vw;
     width: 19.7vw;
@@ -201,7 +200,7 @@ svg{
 
 #trailer {
     position: relative;
-    bottom: 20vw;
+    bottom: 33vw;
     left: 5vw;
     width: 40vw;
 }
@@ -211,13 +210,20 @@ svg{
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1.8vw;
     position: relative;
-    bottom: 20vw;
+    bottom: 33vw;
+    width: 97vw;
 }
 
 #trailer-link {
-    width: 31.5vw;
+    width: 31vw;
     margin-bottom: -10vw;
+    cursor: pointer;
 }
+
+#trailer-link:hover {
+    transform:scale(0.9);
+}
+
 /* Footer */
 footer{
     padding-top:5vw;
@@ -299,7 +305,35 @@ hr{
     header{
         height:60px;
     }
+    #trailer-link {
+        width: 30.2vw;
+    }
+    #trailers {
+        width: 95vw;
+    }
+    #casts-info {
+        width: 88vw;
+    }
+    #banner {
+        width: 93vw;
+    }
+    #comming-soon {
+        bottom: 58.5vw;
+    }
+    #footer-container {
+        width: 94vw;
+    }
+    footer {
+        width: 94vw;
+    }
+    footer {
+        width: 94vw;
+    }
+    #footer-container {
+        width: 92vw;
+    }
 }
+
 /* Tablet */
 @media screen and (max-width:1070px) {
     #check:checked~ul {
@@ -354,16 +388,59 @@ hr{
         left: 0;
         top:100px;
     }
-    #logo{
-        width:6em;
+}
+
+@media screen and (min-width: 768px) and (max-width:1070px) {
+    
+    #cast-info {
+        width: 90.15vw;
+        left: 4vw;
     }
-    #log-sign{
-        right:0.5vw;
+    #casts-info div img {
+        width: 16.28vw;
+    }
+    .name-actor {
+        font-weight: 700;
+        font-size: 1.7vw;
+    }
+    main {
+        width: 90vw;
+    }
+    #poster {
+        bottom: 40vw;
+    }
+    #comming-soon {
+        bottom: 54.5vw;
+    }
+    #trailer-link {
+        width: 30.5vw;
+    }
+    #banner {
+        width: 97.7vw;
     }
 }
+
+@media screen and (max-width: 320px) {
+    #banner {
+        width: 93.9vw;
+    }
+    #trailers {
+        width: 94vw;
+    }
+}
+
 /* Desktop */
 @media screen and (min-width:1024px){
     header{
         max-height:80px;
+    }
+    #banner {
+        width: 98vw;
+    }
+    #poster {
+        bottom: 42vw;
+    }
+    #comming-soon {
+        bottom: 55.5vw;
     }
 } 

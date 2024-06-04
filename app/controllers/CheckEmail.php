@@ -3,7 +3,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'])) {
         $email = $_POST['email'];
-        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $email = filter_var($email, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         try {
             $sql_check_email = "SELECT * FROM users WHERE email = :email";

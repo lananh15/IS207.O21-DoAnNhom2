@@ -3,7 +3,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['username'])) {
         $username = $_POST['username'];
-        $username = filter_var($username, FILTER_SANITIZE_STRING);
+        $username = filter_var($username, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         try {
             $sql_check_username = "SELECT * FROM users WHERE username = :username";

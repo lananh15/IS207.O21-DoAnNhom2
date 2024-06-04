@@ -20,6 +20,6 @@
             unset($_SESSION['verificationCode']);
     } 
     else {
-        echo "<script>console.log('Email is not found in the database');</script>";
+        echo "<script>console.log('Email is not found in our website');</script>";
     }
 ?>

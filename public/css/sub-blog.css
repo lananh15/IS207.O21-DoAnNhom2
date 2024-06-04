@@ -149,11 +149,11 @@ nav span{
 }
 .comment-box::placeholder 
 {
+    padding-top: 1.5vw;
     padding-left: 2vw;
     font-size: 1.6vw;
     font-family: Meri-San;
     color: #FFFFFF;
-    transform: translateY(0,-50%);
     position: relative;
 }
 textarea {

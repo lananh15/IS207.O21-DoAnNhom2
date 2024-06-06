@@ -34,6 +34,7 @@
                         break;
                     default:
                         echo "<script>alert('Unsupported image format');</script>";
+			unlink($targetFile);
                         exit;
                 }
                 $newImage = imagecreatetruecolor($newWidth, $newHeight);

@@ -579,6 +579,12 @@ hr{
     header{
         height:60px;
     }
+    .headings h2{
+	font-size:8vw;
+    }
+    .headings h3{
+	font-size:3.5vw;
+    }
 }
 /* Tablet */
 @media screen and (max-width:1070px) {

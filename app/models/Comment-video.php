@@ -56,7 +56,7 @@ if (isset($_POST['comment'])) {
 
     /* Thêm vào CSDL */
     try {
-        $stmt = $conn->prepare("INSERT INTO $table ($idField, user_id, comment, date) VALUES (:id, :user_id, :comment, UTC_TIMESTAMP())");
+        $stmt = $conn->prepare("INSERT INTO $table ($idField, user_id, comment, date) VALUES (:id, :user_id, :comment, DATE(UTC_TIMESTAMP()))");
 
         if (!$stmt) {
             throw new Exception('Failed to prepare statement.');
@@ -99,7 +99,7 @@ function getComments($conn, $id, $type) {
                            FROM $table c 
                            JOIN users u ON c.user_id = u.id 
                            WHERE c.$idField = :id
-                           ORDER BY c.date DESC");
+                           ORDER BY c.id DESC");
     $stmt->execute([':id' => $id]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

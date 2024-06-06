@@ -67,7 +67,7 @@
             <input type="submit" id="signup-btn" name="signup" value="SIGNUP">
             <div class="login">
                 <p>Have an account?
-                    <a href="login.php">LOGIN</a>
+                    <a href="login">LOGIN</a>
                 </p>
             </div>
         </form>

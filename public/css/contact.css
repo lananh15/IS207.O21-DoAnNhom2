@@ -50,11 +50,13 @@ nav span{
 }
 
 .contact .content h2{
-    font-size: 4vw;
+    font-size: 5vw;
     font-weight: 500;
     font-family: insideout;
     color:#fff;
     margin-top: 0px;
+    margin-bottom:2vw;
+
 }
 .container{
     width:100%;
@@ -269,6 +271,7 @@ nav span{
     display: flex; 
     justify-content: center; 
     z-index: 2; 
+    padding-left:0;
 }
 .social ul li{
     position:relative;
@@ -416,12 +419,10 @@ hr{
     #logo{
         width:4em;
     }
-    #log-sign{
-        right:-1rem;
-    }
     header{
         height:60px;
     }
+
 }
 /* Tablet */
 @media screen and (max-width:1070px) {
@@ -564,3 +565,5 @@ hr{
         margin: 10px 0;
     }
 }
+
+

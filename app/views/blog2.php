@@ -43,7 +43,8 @@
     <p id="content" style="white-space: pre-wrap;"><?php echo $postDetails['content'] ?></p>
     <div id="sign">
         <p id="author">By <?php echo $postDetails['author'] ?></p>
-        <p id="date"><?php echo $postDetails['date'] ?></p>
+        <?php $formattedDate = date('Y-m-d', strtotime($postDetails['date'])); ?>
+        <p id="date"><?php echo $formattedDate ?></p>
     </div>
 </div>
 <br>
@@ -58,22 +59,12 @@
                 foreach ($comment_counts as $count) {
                     $comment_count_map[$count['post_id']] = $count['comment_count'];
                 }
-                $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
+$current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
             ?>
             <div id="number"><?php echo $current_post_comment_count; ?></div> comment<?php echo ($current_post_comment_count !== 1) ? 's' : ''; ?>
         </div>
         <form class="comment-form" method="post" action="" id="comment-form">
-        <?php
-            if (session_status() == PHP_SESSION_NONE) {
-                session_start();
-            }
-            if (isset($_SESSION['avatar'])) {
-                $avatar = htmlspecialchars($_SESSION['avatar'], ENT_QUOTES, 'UTF-8');
-            } else {
-                $avatar = '/IS207.O21-DoAnNhom2/public/images&videos/user1.png';
-            }
-            ?>
-            <img src="<?php echo $avatar; ?>" alt="Avatar" class="avatar">
+            <img src="<?php if(isset($avatar)) {echo $avatar;}else{echo '/IS207.O21-DoAnNhom2/public/images&videos/user1.png';} ?>" alt="Avatar" class="avatar">
             <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($postDetails['id']); ?>">
             <textarea name="comment" placeholder="Leave a comment" class="comment-box" id="comment-box"></textarea>
             <button type="submit" id="send" name="send" class="button-blog">Send</button>
@@ -84,7 +75,7 @@
     <?php
         $post_id = isset($postDetails['id']) ? $postDetails['id'] : null;
         if ($post_id) {
-            $get_comments = $conn->prepare("SELECT pc.*, u.avatar, u.username AS username FROM post_comments pc INNER JOIN users u ON pc.user_id = u.id WHERE pc.post_id = ? ORDER BY pc.date DESC");
+            $get_comments = $conn->prepare("SELECT pc.*, u.avatar, u.username AS username FROM post_comments pc INNER JOIN users u ON pc.user_id = u.id WHERE pc.post_id = ? ORDER BY pc.id DESC");
             $get_comments->execute([$post_id]);
             $comments = $get_comments->fetchAll();
         } else {

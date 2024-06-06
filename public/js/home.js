@@ -59,5 +59,5 @@ cards.forEach((card,index) => {
 });
 let watchBtn=document.getElementById("watch-btn");
 watchBtn.addEventListener("click",function(){
-    window.location.href="watch1.php";
+    window.location.href="watch1";
 })

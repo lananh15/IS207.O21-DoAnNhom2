@@ -1,7 +1,7 @@
 function saveHistoryAndRedirect(type, id) {
     if (typeof userId !== 'undefined' && userId !== null) {
         $.ajax({
-            url: '../../app/controllers/SaveHistory.php',
+            url: '/IS207.O21-DoAnNhom2/app/controllers/SaveHistory.php',
             method: 'POST',
             data: {
                 id_user: userId,

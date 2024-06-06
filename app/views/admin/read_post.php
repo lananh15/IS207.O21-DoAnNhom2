@@ -37,7 +37,7 @@ function is_local_file($path) {
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>posts</title>
+   <title>Post Comments</title>
    <link rel="icon" type="image/x-icon"
         href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
 

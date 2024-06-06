@@ -6,11 +6,11 @@
                 <i class='fas fa-bars'></i>
             </label>
             <ul id='menu'>
-                <li><a href='home.php'>Home</a></li>
-                <li><a href='watch.php'>Watch</a></li>
-                <li><a href='blog.php'>Blog</a></li>
-                <li><a href='about.php'>About us</a></li>
-                <li><a href='contact.php'>Contact us</a></li>
+                <li><a href='home'>Home</a></li>
+                <li><a href='watch'>Watch</a></li>
+                <li><a href='blog'>Blog</a></li>
+                <li><a href='about'>About us</a></li>
+                <li><a href='contact'>Contact us</a></li>
                 <span></span>
             </ul>
             <div id='logo-container'>
@@ -33,13 +33,13 @@
                         echo "<a href='admin/dashboard.php' id='avt'><img src='" . $avatar . "'></a>";
                     }
                     else{
-                        echo "<a href='profile.php' id='avt'><img src='" . $avatar . "'></a>";
+                        echo "<a href='profile' id='avt'><img src='" . $avatar . "'></a>";
                     }
                     $password = htmlspecialchars($_SESSION['password'], ENT_QUOTES, 'UTF-8');
                 } 
                 else {
-                    echo '<button id="login-signup"><a href="login.php">Login</a></button>&nbsp;';
-                    echo '<button id="login-signup"><a href="signup.php">Signup</a></button>';      
+                    echo '<button id="login-signup"><a href="login">Login</a></button>&nbsp;';
+                    echo '<button id="login-signup"><a href="signup">Signup</a></button>';      
                 }
             echo "</div>
         </nav>

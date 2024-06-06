@@ -121,7 +121,7 @@ function validateUsername(){
                 }
             }
         };
-        xhttp.open("POST", "../controllers/CheckUsername.php", true);
+        xhttp.open("POST", "/IS207.O21-DoAnNhom2/app/controllers/CheckUsername.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("username=" + username.value);
     });
@@ -131,21 +131,31 @@ function validatePassword(){
     const isPasswordValid = isValidPassword(password.value);
     if (!isPasswordValid){
         password_error.innerHTML = 
-            '<i class="fa-solid fa-circle-exclamation"></i> Password must be 8-18 characters with letter, number and symbol';
+            '<i class="fa-solid fa-circle-exclamation"></i> Must be 8-18 characters with letter, number and symbol @$!%*?&';
         return false;
     }
     password_error.textContent = "";
 }
+let originalUsername = username.value;
 async function validateForm() {
-    if (password_error.textContent !== '' || password.value==='') {
+    if (password_error.textContent !== '' && password.value !== '') {
         return false;
     }
 
-    const [isUsernameValid] = await Promise.all([validateUsername()]);
-    if (!isUsernameValid) {
-        return false;
+    const isUsernameUnchanged = username.value === originalUsername;
+    const isPasswordUnchanged = password.value === '';
+
+    if (isUsernameUnchanged && isPasswordUnchanged) {
+        return false; // Không cho phép gửi form nếu không thay đổi cả tên người dùng và mật khẩu
     }
-    return true;
+
+    const [isUsernameValid] = await Promise.all([validateUsername()]);
+
+    if (isUsernameUnchanged || isUsernameValid) {
+        return true;
+    }
+
+    return false;
 }
 async function sha256(message) {
     const msgBuffer = new TextEncoder().encode(message);                    

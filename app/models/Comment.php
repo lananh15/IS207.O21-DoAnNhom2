@@ -25,14 +25,14 @@ if (isset($_POST['comment']) && isset($_POST['post_id'])) {
             $user_id = $user['id'];
             $avatar = $user['avatar'];
 
-            $insert_comment = $conn->prepare("INSERT INTO post_comments (post_id, user_id, username, comment, date) VALUES (?, ?, ?, ?, NOW())");
+            $insert_comment = $conn->prepare("INSERT INTO post_comments (post_id, user_id, username, comment, date) VALUES (?, ?, ?, ?, DATE(UTC_TIMESTAMP()))");
             $insert_comment->execute([$post_id, $user_id, $username, $comment_text]);
 
             $response['success'] = true;
             $response['username'] = $username;
             $response['avatar'] = $avatar ? $avatar : '/IS207.O21-DoAnNhom2/public/images&videos/user1.png';
             $response['comment'] = htmlspecialchars($comment_text);
-            $response['date'] = date('Y-m-d H:i:s');
+            $response['date'] = date('Y-m-d');
         } else {
             $response['message'] = 'Error: User not found.';
         }

@@ -92,7 +92,7 @@ function validatePassword(){
     const isPasswordValid = isValidPassword(password.value);
     if (!isPasswordValid){
         password_error.innerHTML = 
-            '<i class="fa-solid fa-circle-exclamation"></i> Password must be 8-18 characters with letter, number and symbol';
+            '<i class="fa-solid fa-circle-exclamation"></i> Must be 8-18 characters with letter, number and symbol @$!%*?&';
         return false;
     }
     password_error.textContent = "";
@@ -131,7 +131,7 @@ function validateForm() {
                 }
             }
         };
-        xhttp.open("POST", "../controllers/CheckEmail.php", true);
+        xhttp.open("POST", "/IS207.O21-DoAnNhom2/app/controllers/CheckEmail.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("email=" + email.value);
     });

@@ -57,7 +57,7 @@
             }
             
             echo "<script>alert('The verification code is sent to your email. Please check it!');
-                        window.location.href='verifycode.php'; </script>";
+                        window.location.href='verifycode'; </script>";
         } else {
             echo "Error: " . $mail->ErrorInfo;
         }

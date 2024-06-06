@@ -13,16 +13,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/normalize.css" />
     <link rel="stylesheet" 
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/watch-coiphim.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/watch-coiphim.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Watch</title>
     <link rel="icon" type="image/x-icon"
         href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
-        <script src="../../public/js/watch-coiphim.js"></script>  
+        <script src="/IS207.O21-DoAnNhom2/public/js/watch-coiphim.js"></script>  
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
@@ -36,7 +36,7 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div id="view">View:  <span id="view-count"><?php echo $viewCount; ?></span></div>
+        <div id="view">View:&nbsp;<span id="view-count"><?php echo $viewCount; ?></span></div>
         <h1>inside out</h1>
         <div id="feedback" id="feedback" data-logged-in="<?php echo isset($_SESSION['username']) ? 'true' : 'false'; ?>">
             <?php
@@ -51,9 +51,9 @@
         
         <hr>
         <div id="comment-container" data-id="<?php echo htmlspecialchars($id); ?>" data-type="<?php echo htmlspecialchars($type); ?>" data-logged-in="<?php echo isset($_SESSION['username']) ? 'true' : 'false'; ?>" data-username="<?php if(isset($_SESSION['username'])) {echo htmlspecialchars(($_SESSION['username']));} ?>">
-            <div id="comment"> <div id="number"><?php echo $comment_count ?></div> comment</div>
+            <div id="comment"> <div id="number"><?php echo $comment_count ?></div> comments</div>
                 <form class="comment-form" onsubmit="return false;">
-                <img src="<?php echo isset($avatar) ? $avatar : '../../public/images&videos/user1.png'; ?>" alt="Avatar" class="avatar">
+                <img src="<?php echo isset($avatar) ? $avatar : '/IS207.O21-DoAnNhom2/public/images&videos/user1.png'; ?>" alt="Avatar" class="avatar">
                 <input type="text" placeholder="Leave a comment" class="comment-box" id="comment-box">
                 </form>  
             </div>
@@ -82,7 +82,7 @@
                             <?php if(isset($comment['date'])): ?>
                             <?php
                                 $date = new DateTime($comment['date']);
-                                $formattedDate = $date->format('d-m-Y H:i:s');
+                                $formattedDate = $date->format('Y-m-d');
                             ?>
                             <span class="comment-timestamp"><?php echo htmlspecialchars($formattedDate); ?></span>
                             <?php endif; ?>

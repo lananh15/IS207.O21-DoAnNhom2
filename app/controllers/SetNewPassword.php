@@ -11,7 +11,7 @@
         $stmt_update_pass->bindParam(":password", $hashedNewPassword, PDO::PARAM_STR);
         $stmt_update_pass->bindParam(":email", $email, PDO::PARAM_STR);
         if ($stmt_update_pass->execute()) {
-            echo "<script>alert('Set new password successfully!');window.location.href='login.php';</script>";
+            echo "<script>alert('Set new password successfully!');window.location.href='login';</script>";
         } else {
             echo "<script>console.log('Error updating password. Please try again.');</script>";
         }
@@ -20,6 +20,6 @@
             unset($_SESSION['verificationCode']);
     } 
     else {
-        echo "<script>console.log('Email is not found in our website');</script>";
+        echo "<script>console.log('Email is not found in the database');</script>";
     }
 ?>

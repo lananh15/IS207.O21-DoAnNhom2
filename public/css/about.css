@@ -76,12 +76,14 @@ h1, p {
     left: 11vw;
     width: 80vw;
     top: 14vw;
+    
 }
 
 #members p {
     margin-bottom: 0;
     margin-top: 0.5vw;
     line-height: 2.64vw;
+    font-size:1.8vw;
 }
 
 #anxiety {
@@ -100,9 +102,11 @@ h1, p {
     width: 76vw;
     left: 50%;
     transform: translate(-50%);
-    top: -17vw;
+    top: -15vw;
 }
-
+#bottom-container p{
+   font-size:2vw;
+}
 @font-face {
     font-family: insideout;
     src: url(../font/InsideOut4.otf);
@@ -182,9 +186,6 @@ hr{
     }
     #logo{
         width:4em;
-    }
-    #log-sign{
-        right:-1rem;
     }
     header{
         height:60px;

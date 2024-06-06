@@ -9,8 +9,8 @@
                 <a href='https://www.tiktok.com/@pixar?_t=8mHdGfcrKF8&_r=1' style='padding:0'><i class='fa-brands fa-tiktok'></i></a>
             </section>
             <div>
-                <a href='about.php'>About us</a>
-                <a href='contact.php'>Contact us</a>
+                <a href='about'>About us</a>
+                <a href='contact'>Contact us</a>
             </div>
             <hr>
             <p>&copy;Disney&copy;Disney/Pixar&copy;&trade;Lucasfilm Ltd.&copy;Marvel, Disney Entertainment</p>

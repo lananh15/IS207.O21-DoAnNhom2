@@ -44,13 +44,13 @@
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <div class="forget">
-                    <a href="forgetpassword.php">Forget password?</a>
+                    <a href="forgetpassword">Forget password?</a>
                 </div>
                 <div id="message-container"></div>
                 <input type="submit" name="login" value="LOGIN" id="login-btn">
                 <div class="register">
                     <p>Don't have an account?
-                        <a href="signup.php">SIGNUP</a>
+                        <a href="signup">SIGNUP</a>
                     </p>
                 </div>
             </form>
@@ -71,7 +71,7 @@
                 if($stmt_select->rowCount()>0 && $_SESSION['password'] === $user['password']){
                     $_SESSION['email']=$user['email'];
                     $_SESSION['avatar']=$user['avatar'];
-                    header('Location: home.php');
+                    header('Location: home');
                     exit;
                 }
                 else{

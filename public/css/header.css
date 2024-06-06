@@ -1,6 +1,8 @@
+
 header{
-    position: relative;
+    position: relative; 
 }
+
 #logo-container{
     position:absolute;
     top:50%;
@@ -73,7 +75,7 @@ nav{
     display:inline-block;
     position: absolute;
     top:50%;
-    right:-50px;
+    right:-45px;
     transform: translate(-40%,-50%);
     margin-right:5px;
 }
@@ -147,11 +149,14 @@ button:hover{
         width:4em;
     }
     #log-sign{
-        right:-0.8rem;
+        right:-0.6vw;
     }
     header{
         height:30px;
     }
+#log-sign p{
+display:none;
+}
 }
 /* Tablet */
 @media screen and (max-width:1070px) {
@@ -221,9 +226,7 @@ button:hover{
     #logo{
         width:6em;
     }
-    #log-sign{
-        right:-1.3rem;
-    }
+    
 
 }
 

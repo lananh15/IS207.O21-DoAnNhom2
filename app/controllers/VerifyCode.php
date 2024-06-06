@@ -23,7 +23,7 @@
                     unset($_SESSION['hashedPassword']);
                     unset($_SESSION['verificationCode']);
                     echo "<script>alert('The verification code is expired!');
-                            window.location.href='signup.php';  
+                            window.location.href='signup';  
                         </script>";
                 }
                 else{
@@ -31,7 +31,7 @@
                     unset($_SESSION['hashedNewPassword']);
                     unset($_SESSION['verificationCode']);
                     echo "<script>alert('The verification code is expired!');
-                            window.location.href='forgetpassword.php';  
+                            window.location.href='forgetpassword';  
                         </script>";
                 }
             }

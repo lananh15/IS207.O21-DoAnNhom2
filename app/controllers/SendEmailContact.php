@@ -32,7 +32,7 @@ if(isset($_POST['send'])){
     $mail->Body = "<h3>Name : $userName <br>Email: $userEmail <br>Message : $userMessage</h3>";
 
     $mail->send();
-    echo "<script>alert('Message Sent! Thank you for contacting us.');</script>";
+    echo "<script>alert('Message sent! Thank you for contacting us.');</script>";
     } 
     catch (Exception $e) {
         echo "Error: " . $e->getMessage();

@@ -30,7 +30,7 @@
                     }
                 } else {
                     // If doesn't exist, insert new user
-                    $sql_insert = "INSERT INTO users (username, password, email, avatar) VALUES (:email, :password, :email, :avatar)";
+                    $sql_insert = "INSERT INTO users (username, password, email, avatar) VALUES (:username, :password, :email, :avatar)";
                     $stmt_insert = $conn->prepare($sql_insert);
                     $stmt_insert->bindParam(':username', $username, PDO::PARAM_STR);
                     $stmt_insert->bindParam(':password', $password, PDO::PARAM_STR);

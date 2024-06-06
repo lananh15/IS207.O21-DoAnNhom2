@@ -1,6 +1,12 @@
 $(document).ready(function() {
     $('#comment-form').on('submit', function(event) {
         event.preventDefault();
+        var commentBox = $('#comment-box');
+        if (commentBox.val().trim() === '') {
+            alert('Comment cannot be empty');
+            return;
+        }
+
         var formData = $(this).serialize();
         $.ajax({
             url: '/IS207.O21-DoAnNhom2/app/models/Comment.php',
@@ -8,7 +14,6 @@ $(document).ready(function() {
             data: formData,
             success: function(response) {
                 if (response.success) {
-                    // Append the new comment to the comment list
                     var commentHTML = `
                         <div class="comment-item">
                             <div class="comment-content">
@@ -24,12 +29,11 @@ $(document).ready(function() {
                     $('.insert-comment').prepend(commentHTML);
                     $('#comment-box').val('');
 
-                    // Update the comment count
                     var currentCount = parseInt($('#number').text()) || 0;
                     var newCount = currentCount + 1;
                     $('#number').text(newCount);
                     var commentText = (newCount > 1) ? 'comments' : 'comment';
-                    $('#comment-text').text(commentText);
+                    $('#number').next().text(commentText);
                 } else {
                     alert('Error adding comment: ' + response.message);
                 }

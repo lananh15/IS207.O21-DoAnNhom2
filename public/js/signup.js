@@ -187,7 +187,7 @@ function validatePassword(){
     const isPasswordValid = isValidPassword(password.value);
     if (!isPasswordValid){
         password_error.innerHTML = 
-            '<i class="fa-solid fa-circle-exclamation"></i> Password must be 8-18 characters with letter, number and symbol';
+            '<i class="fa-solid fa-circle-exclamation"></i> Must be 8-18 characters with letter, number and symbol @$!%*?&';
         let labelPassword = document.getElementById("labelpassword");
         labelPassword.style.top = "-5px";
         labelPassword.style.fontSize = "13px";

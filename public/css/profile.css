@@ -10,6 +10,10 @@ body{
     font-family:insideout;
     src:url(/IS207.O21-DoAnNhom2/public/font/InsideOut4.otf);
 }
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
+}
 nav span{
     position:absolute;
     top:17%;
@@ -99,6 +103,7 @@ h2{
     border:1px solid white;
     cursor: pointer;
     margin-top:2.5em;
+    font-family: Roboto;
 }
 #edit:hover{
     background-color: rgba(255, 255, 255, 0.347);
@@ -112,6 +117,7 @@ h2{
     margin-top:2.5em;
     color:white;
     background-image: linear-gradient(to bottom, #77AAFB, #1250B0);
+    font-family: Roboto;
 }
 #logout:hover{
     background-image: linear-gradient(to bottom, #5797ff, #0a4eb5);

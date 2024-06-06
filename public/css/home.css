@@ -26,7 +26,7 @@ body{
 }
 @font-face{
     font-family:Roboto;
-    src:url(/IS207.O21-DoAnNhom2/public/font/Roboto-Regular.ttf);
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
 }
 nav span{
     position:absolute;
@@ -452,6 +452,9 @@ hr{
     header{
         height:60px;
     }
+    #text-banner{
+	margin-top:-20%;
+    }
 
     /* short-about */
     #short-about {
@@ -462,11 +465,15 @@ hr{
     #short-about div {
         grid-row: auto;
     }
+    #short-about h3 {
+        font-size:11vw;
+    }
 
     #short-about p {
         width: 80%;
         margin: 2vw auto;
         text-align: center;
+	font-size:5vw;
     }
 
     #short-about img {
@@ -475,7 +482,32 @@ hr{
         top: 0;
         right: auto;
     }
-    
+    #short-video h2{
+	font-size:10vw;
+    }
+    #short-video h3{
+	font-size:6vw;
+    }
+    #movie-available h3{
+	font-size:6vw;
+    }
+    #movie-available img{
+	width:60vw;
+    }
+    #watch-btn{
+	font-size:4vw;
+	width:30vw;
+	height:6vw;
+    }
+    #award h2{
+	font-size:11vw;
+    }
+    #award h4{
+	font-size:5vw;
+    }
+    #award p{
+	font-size:3vw;
+    }
 }
 /* Tablet */
 @media screen and (max-width:1070px) {
@@ -541,6 +573,15 @@ hr{
     #banner{
         background-image: url("../images&videos/Home/banner-mobile.jpg");
     } 
+    #text-banner h2{
+	font-size:5vw;
+    }
+    #text-banner h3{
+	font-size:5vw;
+    }
+    #text-banner h1{
+	font-size:20vw;
+    }
     .card {
         top:3.5rem;
     }

@@ -11,6 +11,10 @@ body{
     font-family:insideout;
     src:url(/IS207.O21-DoAnNhom2/public/font/InsideOut4.otf);
 }
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
+}
 nav span{
     position:absolute;
     top:17%;
@@ -65,12 +69,11 @@ h2 {
 }
 #editAvt{
     position:absolute;
-    top:30%;
+    top:40%;
     display:grid;
     place-items: center;
     left:18vw;
     justify-self: center;
-    top:30%;
     font-size:1vw;
 
 }
@@ -93,6 +96,7 @@ h2 {
     text-align: center;
     border: 1px solid white;
     padding-top:0.2em;
+    font-family:Roboto;
 }
 #editAvt button:hover{
     background-color:#3885ff;
@@ -100,11 +104,12 @@ h2 {
 #editprofile{
     display:inline-block;
     position: absolute;
-    top:9%;
+    top:10%;
     right:20%;
     width:30em;
     height:100vh;
     font-size:1vw;
+    font-family:Roboto;
 }
 h2{
     color:white;
@@ -137,8 +142,7 @@ h2{
     border:none;
     color:white;
     width: 85%;
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top:0.5em;
     font-size:1.5em;
     overflow: hidden;
     pointer-events: none;
@@ -224,52 +228,6 @@ h2{
     header{
         height:60px;
     }
-    #container {
-        flex-direction: column;
-    }
-
-    #editAvt {
-        position: static;
-        justify-self: center;
-        margin-top: 30vw;
-    }
-
-    #editprofile {
-        position: static;
-        width: 100%;
-    }
-
-    .inputbox {
-        width: 70%;
-        height: 6em;
-        margin: 3em auto 20px auto;
-        
-    }
-    .inputbox input{
-        pointer-events: auto;
-        top:-0.5vw;
-        font-size:3em;
-    }
-    .inputbox .fa-regular{
-        display:none;
-    }
-    #hidepass, #showpass{
-        right:-2em;
-    }
-    .button {
-        display: flex;
-        width: 40%;
-        justify-content: center;
-        margin: 3em auto 0 auto;
-    }
-    .error-message{
-        text-align: center;
-        font-size:1.5em;
-    }
-    #submitBtn {
-        position: static;
-        margin-top: 10px;
-    }
     
 }
 
@@ -326,7 +284,63 @@ h2{
     #log-sign{
         right:0.5vw;
     }
-    
+    body{
+        overflow-y: auto;
+    }
+    #container {
+        flex-direction: column;
+    }
+
+    #editAvt {
+        position: static;
+        margin-top: 60vw;
+        font-size: 2.5vw;
+    }
+
+    #editprofile {
+        position: static;
+        width: 100%;
+    }
+    #editprofile h2{
+        font-size:5em;
+    }
+    .inputbox {
+        width: 70%;
+        height: 6em;
+        margin: 3em auto 20px auto;
+        
+    }
+    .inputbox label{
+        font-size:1.8em;
+    }
+    .inputbox input{
+        pointer-events: auto;
+        top:-0.5vw;
+        font-size:3em;
+    }
+    .inputbox .fa-regular{
+        display:none;
+    }
+    #hidepass, #showpass{
+        right:-3em;
+	top:2vw;
+	font-size:2em;
+    }
+    .button {
+        display: flex;
+        width: 30%;
+	font-size:2em;
+        justify-content: center;
+        margin: 3em auto 0 auto;
+    }
+    .error-message{
+        text-align: center;
+        font-size:2em;
+    }
+    #submitBtn {
+        position: static;
+        margin-top: 10px;
+    }
 
 }
 /* Desktop */

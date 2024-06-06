@@ -2,7 +2,7 @@ body{
     padding:0;
     margin:0;
     box-sizing: border-box;
-    background-image: url(../../public/images&videos/sao-1.png);
+    background-image: url(../../public/images&videos/sao\ 1.png);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -32,7 +32,7 @@ main {
 #banner{
     position: relative;
     background-image: url("../../public/images&videos/Watch/Watch1/movie-bg-1.png");
-    top: 0vw;
+    bottom: 3vw;
     width:100%;
     background-position: center;
     background-size: cover;
@@ -41,9 +41,9 @@ main {
 
 #poster{
     position: relative;
-    top: 12vw;
+    top: 10vw;
     left: 5vw;
-    height: 32vw;
+    height: 30vw;
 }
 
 
@@ -55,12 +55,11 @@ main {
     row-gap: 4vw;
     width: 32vw;
     left: 34vw;
-    top: -5vw;
     font-weight: 700;
     font-size: 1.7vw;
     column-gap: 3.5vw;
     row-gap: 3vw;
-
+    bottom: 8vw;
 }
 
 .tag{
@@ -88,6 +87,7 @@ main {
     column-gap: 4vw;
     justify-content: center;
     align-items: center;
+    bottom: 4vw;
 }
 
 .duration-content {
@@ -112,14 +112,15 @@ svg{
     font-size: 1.4vw;
     text-align: center;
     position: relative;
-    left: -18vw;
-    top: 17vw;
-    width: 23vw;
+    left: -16.3vw;
+    top: 14.5vw;
+    width: 21vw;
     border: 0.05vw solid white;
     font-family: inknutantiqua;
     height: 4.5vw;
     border-radius: 0.52vw;
     color: white;
+    cursor: pointer;
 }
 
 
@@ -149,6 +150,7 @@ svg{
     transform: translate(-50%);
     height: 14.5vw;
     top: 2.3vw;
+    font-size: 2vw;
 }
 
 #movie-description p{
@@ -217,15 +219,21 @@ svg{
     column-gap: 1.8vw;
     position: relative;
     top: 18vw;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
 }
 
 
 #trailer-link{
-    width: 31.5vw;
+    width: 30.9vw;
     margin-bottom: 25vw;
+    cursor: pointer;
 }
 
-
+#trailer-link:hover {
+    transform:scale(0.9);
+}
 
 #movie-description{
     width: 100%;
@@ -255,13 +263,11 @@ svg{
 
 #trailer{
         display: flex;
-        flex-wrap: wrap; /* Đảm bảo các phần tử con xuống dòng khi không đủ không gian */
+        flex-wrap: wrap; 
         justify-content: center; 
         align-items: center; 
         text-align: center; 
 }
-
-
 
 
 /* Footer */
@@ -337,16 +343,21 @@ hr{
         transform: translate(0,-50%);
 
     }
-    #logo{
-        width:4em;
-    }
-    #log-sign{
-        right:-1rem;
-    }
     header{
         height:60px;
     }
+    #poster {
+        top: 13.5vw;
+        left: 5.8vw;
+    }
+    #footer-container {
+        width: 93vw;
+    }
+    #comming-soon {
+        bottom: 59.5vw;
+    }
 }
+
 /* Tablet */
 @media screen and (max-width:1070px) {
     #check:checked~ul {
@@ -407,7 +418,35 @@ hr{
     #log-sign{
         right:0.5vw;
     }
+    #cast-infor {
+        width: 88vw;
+    }
+    #trailer-link {
+        width: 30.22vw;
+    }
+    #trailers {
+        width: 94vw;
+    }
+    #poster {
+        top: 13.5vw;
+    }
+    #watch {
+        top: 18vw;
+    }
 }
+
+@media screen and (max-width:375px) {
+    #trailer-link {
+        width: 30.3vw;
+    }
+} 
+
+@media screen and (min-width: 600px) and (max-width: 1020px) {
+    #watch {
+        top: 18.5vw;
+    }
+}
+
 /* Desktop */
 @media screen and (min-width:1024px){
     header{

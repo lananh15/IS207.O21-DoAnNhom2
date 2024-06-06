@@ -12,8 +12,6 @@ body{
     src:url(../../public/font/InsideOut4.otf);
 }
 
-
-
 nav span{
     position:absolute;
     top:17%;
@@ -52,7 +50,7 @@ main{
 
 #prevBtn,
 #nextBtn {
-    position: absolute;
+    position: absolute; 
     transform: translateY(-50%); 
     color: white;
     border: none;
@@ -70,14 +68,12 @@ main{
 
 
 #prevBtn {
-    left: 1vw; /* Đặt nút Previous ở bên trái */
+    left: 1vw;
 }
 
 #nextBtn {
-    right: 1vw; /* Đặt nút Next ở bên phải */
+    right: 1vw; 
 }
-
-
 
 /* Smartphone */
 @media screen and (max-width:767px){
@@ -160,6 +156,7 @@ main{
         left: 0;
         top:100px;
     }
+    
 }
 /* Desktop */
 @media screen and (min-width:1024px){

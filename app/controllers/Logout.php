@@ -2,6 +2,6 @@
     session_start();
     session_unset();
     session_destroy(); 
-    header("Location: ../views/home.php");
+    header("Location: ../home");
     exit;
 ?>

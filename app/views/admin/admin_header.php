@@ -21,8 +21,8 @@ if(isset($message)){
       <a href="view_posts.php"><span>View Posts</span></a>
       <a href="view_movies.php"><span>View Movies</span></a>
       <a href="view_trailers.php"><span>View Trailers</span></a>
-      <a href="/IS207.O21-DoAnNhom2/app/views/home.php" onclick="return confirm('Return to home?');"><span>Return To Home</span></a>
-      <a href="/IS207.O21-DoAnNhom2/app/controllers/logout.php" style="color:#FF6C58;" onclick="return confirm('Logout from the website?');"><span>Logout</span></a>
+      <a href="../home" onclick="return confirm('Return to home?');"><span>Return To Home</span></a>
+      <a href="../logout.php" style="color:#FF6C58;" onclick="return confirm('Logout from the website?');"><span>Logout</span></a>
    </nav>
 
 </header>

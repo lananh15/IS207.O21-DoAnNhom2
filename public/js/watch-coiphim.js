@@ -51,7 +51,7 @@ function insertComment() {
 
     // Gửi dữ liệu comment, id và type lên máy chủ bằng AJAX để thực hiện Insert vào cơ sở dữ liệu
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../../app/models/Comment-video.php', true);
+    xhr.open('POST', '/IS207.O21-DoAnNhom2/app/models/Comment-video.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -86,7 +86,7 @@ function formatDateToDMYHMS(date) {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
     
-    return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+    return `${year}-${month}-${day}`;
 }
 
 /* Like dislike */
@@ -154,7 +154,7 @@ $(document).ready(function() {
         }
 
         $.ajax({
-            url: '../../app/models/feedback_processor.php',
+            url: '/IS207.O21-DoAnNhom2/app/models/feedback_processor.php',
             type: 'POST',
             dataType: 'json',
             data: {

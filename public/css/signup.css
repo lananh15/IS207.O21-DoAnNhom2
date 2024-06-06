@@ -1,3 +1,7 @@
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Roboto-Regular.ttf);
+}
 *{
     margin:0;
     padding:0;
@@ -10,12 +14,13 @@ body{
     align-items: center;
     justify-content: center;
     height:100vh;
+    font-family:Roboto;
 }
 
 section{
     position: relative;
     width:55vw;
-    max-width: 520px;
+    max-width: 500px;
     background-color: #222222;
     border: 2px solid rgb(255, 255, 255,0.5);
     border-radius: 20px;
@@ -201,6 +206,9 @@ hr{
     .register {
         width: 100%;
         max-width: 300px;
+    }
+    .error-message{
+        font-size:8.8px;
     }
 }
 @media (max-width: 480px) {

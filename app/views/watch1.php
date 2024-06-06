@@ -13,11 +13,11 @@ require_once '../controllers/GetUserId.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/normalize.css" />
     <link rel="stylesheet" 
       href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="../../public/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="../../public/css/watch1.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
+    <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/watch1.css" />
     <title>Watch</title>
     <link rel="icon" type="image/x-icon"
         href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
@@ -107,7 +107,7 @@ require_once '../controllers/GetUserId.php';
     </main>
 
     <?php require_once "footer.php" ?>
-    <script src="../../public/js/watch-video.js"></script>
+    <script src="/IS207.O21-DoAnNhom2/public/js/watch-video.js"></script>
 </body>
 
 </html>

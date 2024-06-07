@@ -498,6 +498,7 @@ hr{
     }
     .container .contactInfo{
         margin-bottom: 30px;
+        margin-right: auto;
     }
 }
 @media only screen and (max-width: 414px) { 

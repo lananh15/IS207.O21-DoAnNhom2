@@ -585,5 +585,8 @@ hr{
     .card {
         top:3.5rem;
     }
-
+    #log-sign {
+        right: 0.5vw;
+    }
+	
 }

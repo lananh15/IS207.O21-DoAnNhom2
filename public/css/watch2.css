@@ -388,6 +388,9 @@ hr{
         left: 0;
         top:100px;
     }
+    #log-sign {
+        right: 0.5vw;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width:1070px) {

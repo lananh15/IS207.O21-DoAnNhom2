@@ -479,6 +479,9 @@ hr{
         transform: translateX(-50%);
         top:330px;
     }
+    #log-sign {
+        right: 0.5vw;
+    }
 }
 /* Desktop */
 @media screen and (min-width:1024px){

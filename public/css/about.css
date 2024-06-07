@@ -41,7 +41,13 @@ main {
     src: url(../font/Home/Roboto-Regular.ttf);
 }
 
-h1, p {
+#members p {
+    color: white;
+    font-family: roboto;
+    font-size: 2.48vw;
+    font-weight: 400;
+}
+#bottom-container p {
     color: white;
     font-family: roboto;
     font-size: 2.48vw;
@@ -60,6 +66,8 @@ h1, p {
     background: linear-gradient(90deg, white, #B1CFF2 0%, #FCFDFF 100%);
     -webkit-background-clip: text; 
     animation: fadeColor 6s forwards;
+    color: white;
+    font-weight: 400;
 }
 
 @keyframes fadeColor {
@@ -244,6 +252,9 @@ hr{
         width:100%;
         left: 0;
         top:255px;
+    }
+    #log-sign {
+        right: 0.5vw;
     }
 }
 /* Desktop */

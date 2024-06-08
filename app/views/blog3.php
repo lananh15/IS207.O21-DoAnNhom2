@@ -42,7 +42,7 @@
 </div>
 <div id="Main-content">
     <h2><?php echo $postDetails['title'] ?></h2>
-    <p id="content" style="white-space: pre-wrap;"><?php echo $postDetails['content'] ?></p>
+    <p id="content" style="white-space: pre-wrap;"><?php echo "<script> var x=document.getElementById('content'); x.innerHTML='" . htmlspecialchars_decode($postDetails['content']) . "';</script>" ?></p>
     <div id="sign">
         <p id="author">By <?php echo $postDetails['author'] ?></p>
         <?php $formattedDate = date('Y-m-d', strtotime($postDetails['date'])); ?>

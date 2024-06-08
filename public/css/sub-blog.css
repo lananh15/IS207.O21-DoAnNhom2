@@ -82,7 +82,10 @@ nav span{
     color: #FFFFFF;
     font-size:1.6vw;
     padding-left: 12.3em;
-    font-family:montserrat;;
+    font-family:montserrat;
+    max-width: 100%; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
 }
 #sign
 {

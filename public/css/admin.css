@@ -372,9 +372,15 @@ section{
    padding-top: 1rem;
 }
 
-.post-editor form p{
+.post-editor form h1{
    font-size: 1.8rem;
    color:white;
+   padding-top: 1rem;
+}
+
+.post-editor form p{
+   font-size: 1.8rem;
+   color:black;
    padding-top: 1rem;
 }
 

@@ -9,7 +9,7 @@ if (isset($_POST['save'])) {
     $status = filter_var($_POST['status'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $author = filter_var($_POST['author'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    $update_post = $conn->prepare("UPDATE `posts` SET title = ?, content = ?, status = ?, author = ? WHERE id = ?");
+    $update_post = $conn->prepare("UPDATE posts SET title = ?, content = ?, status = ?, author = ? WHERE id = ?");
     $update_post->execute([$title, $content, $status, $author, $post_id]);
 
     $message[] = 'Post updated!';
@@ -22,7 +22,7 @@ if (isset($_POST['save'])) {
         $image_data_base64 = base64_encode($image_data);
 
         // Lưu chuỗi base64 vào cơ sở dữ liệu
-        $update_image = $conn->prepare("UPDATE `posts` SET imagedata = ? WHERE id = ?");
+        $update_image = $conn->prepare("UPDATE posts SET imagedata = ? WHERE id = ?");
         $update_image->execute([$image_data_base64, $post_id]);
 
         $message[] = 'Image updated!';
@@ -32,9 +32,9 @@ if (isset($_POST['save'])) {
 if (isset($_POST['delete_post'])) {
     $post_id = filter_var($_POST['post_id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    $delete_post = $conn->prepare("DELETE FROM `posts` WHERE id = ?");
+    $delete_post = $conn->prepare("DELETE FROM posts WHERE id = ?");
     $delete_post->execute([$post_id]);
-    $delete_comments = $conn->prepare("DELETE FROM `post_comments` WHERE post_id = ?");
+    $delete_comments = $conn->prepare("DELETE FROM post_comments WHERE post_id = ?");
     $delete_comments->execute([$post_id]);
 
     $message[] = 'Post deleted successfully!';
@@ -44,7 +44,7 @@ if (isset($_POST['delete_image'])) {
    $empty_image = '';
    $post_id = filter_var($_POST['post_id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-   $unset_image = $conn->prepare("UPDATE `posts` SET imagedata = ? WHERE id = ?");
+   $unset_image = $conn->prepare("UPDATE posts SET imagedata = ? WHERE id = ?");
    $unset_image->execute([$empty_image, $post_id]);
 
    $message[] = 'Image deleted successfully!';
@@ -63,10 +63,12 @@ if (isset($_POST['delete_image'])) {
 
     <!-- Font Awesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+
 
     <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="/IS207.O21-DoAnNhom2/public/css/admin.css?v=<?php echo time(); ?>">
-</head>
+</head> 
 <body>
 
 <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/app/views/admin/admin_header.php'; ?>
@@ -76,26 +78,35 @@ if (isset($_POST['delete_image'])) {
 
     <?php
     $post_id = $_GET['id'];
-    $select_posts = $conn->prepare("SELECT * FROM `posts` WHERE id = ?");
+    $select_posts = $conn->prepare("SELECT * FROM posts WHERE id = ?");
     $select_posts->execute([$post_id]);
     if ($select_posts->rowCount() > 0) {
         $fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC);
         ?>
         <form action="" method="post" enctype="multipart/form-data">
             <input type="hidden" name="post_id" value="<?= $fetch_posts['id']; ?>">
-            <p>POST STATUS <span>*</span></p>
+            <h1>POST STATUS <span>*</span></h1>
             <select name="status" class="box" required>
-                <option value="<?= $fetch_posts['status']; ?>" selected><?= $fetch_posts['status']; ?></option>
+               
                 <option value="active">active</option>
                 <option value="deactive">deactive</option>
             </select>
-            <p>POST TITLE <span>*</span></p>
+            <h1>POST TITLE <span>*</span></h1>
             <input type="text" name="title" maxlength="100" required placeholder="add post title" class="box" value="<?= $fetch_posts['title']; ?>">
-            <p>POST CONTENT <span>*</span></p>
-            <textarea name="content" class="box" required maxlength="10000" placeholder="write your content..." cols="30" rows="10"><?= $fetch_posts['content']; ?></textarea>
-            <p>POST AUTHOR <span>*</span></p>
+            <h1>POST CONTENT <span>*</span></h1>
+        
+        <textarea name="content" id="content" class="box" required maxlength="10000" placeholder="write your content..." cols="30" rows="10"><?= $fetch_posts['content']; ?></textarea>
+        <script>
+    ClassicEditor
+        .create(document.querySelector('#content'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+        
+            <h1>POST AUTHOR <span>*</span></h1>
             <input type="text" name="author" maxlength="100" required placeholder="Add author" class="box" value="<?= $fetch_posts['author']; ?>">
-            <p>POST IMAGE</p>
+            <h1>POST IMAGE</h1>
             <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
             <?php
 if (!empty($fetch_posts['imagedata'])) {

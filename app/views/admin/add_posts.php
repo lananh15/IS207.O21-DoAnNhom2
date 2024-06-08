@@ -31,6 +31,7 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
         href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="/IS207.O21-DoAnNhom2/public/css/admin.css?v=<?php echo time(); ?>">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
 </head>
 <body>
 
@@ -38,13 +39,22 @@ if (isset($_POST['publish']) || isset($_POST['draft'])) {
 <section class="post-editor">
     <h1 class="heading">Add a new memory</h1>
     <form action="" method="post" enctype="multipart/form-data">
-        <p>POST TITLE <span>*</span></p>
+        <h1>POST TITLE <span>*</span></h1>
         <input type="text" name="title" maxlength="100" required placeholder="Add title" class="box">
-        <p>POST CONTENT <span>*</span></p>
-        <textarea name="content" class="box" required maxlength="10000" placeholder="Write content..." rows="10"></textarea>
-        <p>POST AUTHOR <span>*</span></p>
+        <h1>POST CONTENT <span>*</span></h1>
+         
+        <textarea name="content" id="content" class="box" required maxlength="10000" placeholder="write your content..." cols="30" rows="10"></textarea>
+        <script>
+    ClassicEditor
+        .create(document.querySelector('#content'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+        
+        <h1>POST AUTHOR <span>*</span></h1>
         <input type="text" name="author" maxlength="100" required placeholder="Add author" class="box">
-        <p>POST IMAGE</p>
+        <h1>POST IMAGE</h1>
         <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
         <div class="flex-btn">
             <input type="submit" value="Publish Post" name="publish" class="btn">

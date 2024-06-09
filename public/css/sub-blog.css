@@ -205,7 +205,7 @@ textarea:hover {
 {
     position: absolute;
     border: 0.1vw solid white;
-    background-color:rgba(217, 217, 217, 0) ;
+    background-color: transparent;
     color: #fff; 
     border-radius: 0.5vw;
     width: 8vw;
@@ -214,6 +214,7 @@ textarea:hover {
     font-family: Roboto;
     margin: 0.35vw;
     top: 9.3vw;
+    cursor:pointer;
 }
 #send
 {
@@ -225,8 +226,7 @@ textarea:hover {
 }
 .button-blog:hover
 {
-    background-color: linear-gradient(to bottom,#77AAFB, #1250B0);
-    border: 0.1 vw solid #619EFF;
+    background-color:rgba(217, 217, 217, 0.2) ;
 }
 /* update for new comment */
 .comment-item {

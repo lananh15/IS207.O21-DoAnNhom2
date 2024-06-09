@@ -30,7 +30,7 @@ li{
 li a{
     position: relative;
     display: inline-block;
-    font-size: 1.13rem;
+    font-size: 1.05rem;
     font-weight: 500;
     color: white;
     text-decoration: none;
@@ -48,28 +48,28 @@ nav{
 }
 
 #menu li:first-child:hover~span {
-    width:4.5em;
+    width:4.7em;
     left: 0.5em;
 }
 
 #menu li:nth-child(2):hover~span {
-    width:4.5em;
-    left: 6.5em;
+    width:5.1em;
+    left: 6.3em;
 }
 
 #menu li:nth-child(3):hover~span {
-    left: 12.2em;
-    width:4.5em;
+    left: 12.6em;
+    width:4em;
 }
 
 #menu li:nth-child(4):hover~span {
-    width:5em;
-    left: 18.3em;
+    width:5.6em;
+    left: 18em;
 }
 
 #menu li:nth-child(5):hover~span {
-    width:6em;
-    left: 25.2em;
+    width:6.3em;
+    left: 25.5em;
 }
 #log-sign{
     display:inline-block;
@@ -103,7 +103,7 @@ button{
     transition: all 0.3s ease-in-out;
 }
 button a{
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     text-decoration: none;
     color:white;

@@ -23,7 +23,7 @@
     ?>
     <section>
         <form method="post">
-            <h1>SIGN UP</h1>
+            <h1>SIGNUP</h1>
             <a href="<?php echo $client->createAuthUrl(); ?>" class="google-login-btn">
                 <span class="icon"><i class="fa-brands fa-google"></i></span>
                 <span>Continue with Google</span>
@@ -64,7 +64,7 @@
                 <i class="fa-solid fa-lock"></i>
             </div>
             <div id="confirmpassword-error" class="error-message"></div>
-            <input type="submit" id="signup-btn" name="signup" value="SIGNUP">
+            <input type="submit" id="signup-btn" name="signup" value="Signup">
             <div class="login">
                 <p>Have an account?
                     <a href="login">LOGIN</a>

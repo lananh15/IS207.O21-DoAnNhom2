@@ -47,7 +47,7 @@
                     <a href="forgetpassword">Forget password?</a>
                 </div>
                 <div id="message-container"></div>
-                <input type="submit" name="login" value="LOGIN" id="login-btn">
+                <input type="submit" name="login" value="Login" id="login-btn">
                 <div class="register">
                     <p>Don't have an account?
                         <a href="signup">SIGNUP</a>

@@ -25,11 +25,14 @@ body{
     font-family:Meri-San;
     src: url(../../public/font/Blog/MerriweatherSans-VariableFont_wght.ttf);
 }
+nav{
+    font-family: Roboto;
+}
 nav span{
     position:absolute;
     top:17%;
-    width:4.5em;
-    left: 12.2em;
+    left: 12.6em;
+    width:4em;
     height:66%;
     background: linear-gradient(45deg, #192e4f,#33adff);
     border-radius: 10px;

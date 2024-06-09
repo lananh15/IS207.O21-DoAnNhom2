@@ -23,12 +23,14 @@ body{
     src: url(../../public/font/Home/Roboto-Regular.ttf);
 }
     
-
+nav{
+    font-family: roboto;
+}
 nav span{
     position:absolute;
     top:17%;
-    width:6em;
-    left: 25.2em;
+    width:6.3em;
+    left: 26.5em;
     height:66%;
     background: linear-gradient(45deg, #192e4f,#33adff);
     border-radius: 10px;

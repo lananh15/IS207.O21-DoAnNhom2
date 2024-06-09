@@ -12,11 +12,18 @@ body{
     src:url(../../public/font/InsideOut4.otf);
 }
 
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
+}
+nav{
+    font-family:Roboto;
+}
 nav span{
     position:absolute;
     top:17%;
-    width:4.5em;
-    left: 6.5em;
+    width:5.1em;
+    left: 6.3em;
     height:66%;
     background: linear-gradient(45deg, #192e4f,#33adff);
     border-radius: 10px;

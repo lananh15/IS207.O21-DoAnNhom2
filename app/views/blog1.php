@@ -14,8 +14,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
     <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
     <link rel="stylesheet" href="/IS207.O21-DoAnNhom2/public/css/sub-blog.css?v=<?php echo time(); ?>">
     <title>Blog 1</title>
-    <link rel="icon" type="image/x-icon"
-        href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
+    <link rel="icon" type="image/x-icon" href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
     <script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
 </head>
 
@@ -24,7 +23,15 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
     require_once "header.php"; 
     require_once "../models/PostId.php"; 
     $postDetails = getPost(1);
+
+    // Check if post is deactive
+    if ($postDetails['status'] === 'deactive') {
+        echo '<div id="space">';
+        echo '<h1>OOPS... LOOKS LIKE THIS POST IS STILL UNDER CONSTRUCTION</h1>';
+        echo '</div>';
+    } else {
 ?>
+
 <div id="banner">
     <?php
     $select_posts = $conn->prepare("SELECT * FROM posts WHERE status = 'active' AND id=1 ORDER BY date DESC");
@@ -47,9 +54,9 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
         <?php echo htmlspecialchars_decode($postDetails['content']); ?>
     </div>
     <div id="sign">
-        <p id="author">By <?php echo $postDetails['author'] ?></p>
+        <p id="author">By <?php echo htmlspecialchars($postDetails['author']); ?></p>
         <?php $formattedDate = date('Y-m-d', strtotime($postDetails['date'])); ?>
-        <p id="date"><?php echo $formattedDate ?></p>
+        <p id="date"><?php echo htmlspecialchars($formattedDate); ?></p>
     </div>
 </div>
 <br>
@@ -64,7 +71,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 foreach ($comment_counts as $count) {
                     $comment_count_map[$count['post_id']] = $count['comment_count'];
                 }
-$current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
+                $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
             ?>
             <div id="number"><?php echo $current_post_comment_count; ?></div> comment<?php echo ($current_post_comment_count !== 1) ? 's' : ''; ?>
         </div>
@@ -106,7 +113,7 @@ $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $c
 
             echo '<div class="comment-item">
                     <div class="comment-content">
-                        <img src="' . htmlspecialchars($avatar_src) . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
+                        <img src="' . $avatar_src . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
                         <div class="comment-details">
                             <span class="comment-username">' . htmlspecialchars($comment['username']) . '</span>
                             <p class="comment-text" style="white-space: pre-wrap;">' . htmlspecialchars($comment['comment']) . '</p>
@@ -118,7 +125,10 @@ $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $c
     ?>
 </div>
 
-    <?php require_once "footer.php"; ?>
+<?php 
+    } // End of else block for active post
+    require_once "footer.php"; 
+?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>

@@ -4,10 +4,11 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/IS207.O21-DoAnNhom2/app/controllers/a
 
 if (isset($_POST['save'])) {
     $post_id = $_GET['id'];
-    $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $content = filter_var($_POST['content'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $status = filter_var($_POST['status'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $author = filter_var($_POST['author'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $author = $_POST['author'];
+    $status = $_POST['status'];
+   
 
     $update_post = $conn->prepare("UPDATE posts SET title = ?, content = ?, status = ?, author = ? WHERE id = ?");
     $update_post->execute([$title, $content, $status, $author, $post_id]);
@@ -15,13 +16,11 @@ if (isset($_POST['save'])) {
     $message[] = 'Post updated!';
 
     if (!empty($_FILES['image']['tmp_name'])) {
-        // Lấy dữ liệu ảnh từ file tải lên
+
         $image_data = file_get_contents($_FILES['image']['tmp_name']);
 
-        // Mã hóa dữ liệu ảnh thành chuỗi base64
         $image_data_base64 = base64_encode($image_data);
 
-        // Lưu chuỗi base64 vào cơ sở dữ liệu
         $update_image = $conn->prepare("UPDATE posts SET imagedata = ? WHERE id = ?");
         $update_image->execute([$image_data_base64, $post_id]);
 
@@ -30,7 +29,7 @@ if (isset($_POST['save'])) {
 }
 
 if (isset($_POST['delete_post'])) {
-    $post_id = filter_var($_POST['post_id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $post_id = $_POST['post_id'];
 
     $delete_post = $conn->prepare("DELETE FROM posts WHERE id = ?");
     $delete_post->execute([$post_id]);
@@ -42,7 +41,7 @@ if (isset($_POST['delete_post'])) {
 
 if (isset($_POST['delete_image'])) {
    $empty_image = '';
-   $post_id = filter_var($_POST['post_id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+   $post_id = $_POST['post_id'];
 
    $unset_image = $conn->prepare("UPDATE posts SET imagedata = ? WHERE id = ?");
    $unset_image->execute([$empty_image, $post_id]);

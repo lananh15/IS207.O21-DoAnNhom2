@@ -9,26 +9,17 @@ body{
     font-family:insideout;
     src:url(../../public/font/InsideOut4.otf);
 }
-@font-face{
-    font-family:lora;
-    src:url(../../public/font/blog/Lora-VariableFont_wght.ttf)
-}
+
 @font-face{
     font-family:montserrat;
     src:url(../../public/font/blog/Montserrat-VariableFont_wght.ttf)
 }
-@font-face {
-    font-family: Meri-regular;
-    src: url(../../public/font/Blog/Merriweather-Regular.ttf);
-}
+
 @font-face{
     font-family:Roboto;
     src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
 }
-@font-face {
-    font-family:Meri-San;
-    src: url(../../public/font/Blog/MerriweatherSans-VariableFont_wght.ttf);
-}
+
 nav{
     font-family: Roboto;
 }
@@ -41,54 +32,6 @@ nav span{
     background: linear-gradient(45deg, #192e4f,#33adff);
     border-radius: 10px;
     transition: 0.5s;
-}
-#banner {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-
-#banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-#Main-content div
-{
-    position: relative;
-    width: 100%;
-}
-#Main-content h2
-{
-    margin: 0;
-    position: relative; 
-    padding-top: 6em;
-    padding-left: 7.9em;
-    font-size:2.5vw;
-    font-weight:normal;
-    color: #F8F9D1;
-    font-family:Meri-regular;
-    width: 60%;
-}
-#Main-content p
-{
-    margin: 0;
-    font-weight:normal;
-    width: 60%;
-}
-#content
-{
-    position: relative; 
-    padding-top:2em;
-    color: #FFFFFF;
-    font-size:1.6vw;
-    padding-left: 12.3em;
-    font-family:montserrat;
-    max-width: 100%; /* Ensure the content takes up the full width available */
-    word-wrap: break-word; /* Ensure long words break correctly */
-    white-space: pre-wrap; /* Preserve whitespace formatting */
 }
 #space {
     position: relative;
@@ -115,6 +58,53 @@ nav span{
 {
     width:62vw;
 }
+#banner {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#Main-content div
+{
+    position: relative;
+    width: 100%;
+}
+#Main-content h2
+{
+    margin: 0;
+    position: relative; 
+    padding-top: 6em;
+    padding-left: 7.9em;
+    font-size:2.5vw;
+    font-weight:bold;
+    color: #F8F9D1;
+    font-family:Montserrat;
+text-transform: capitalize;
+    width: 60%;
+}
+#Main-content p
+{
+    margin: 0;
+    font-weight:normal;
+    width: 60%;
+}
+#content
+{
+    position: relative; 
+    padding-top:2em;
+    color: #FFFFFF;
+    font-size:1.6vw;
+    padding-left: 12.3em;
+    font-family:montserrat;
+}
+
 #sign
 {
     margin: 0;

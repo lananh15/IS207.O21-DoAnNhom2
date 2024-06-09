@@ -15,6 +15,9 @@ body{
     font-family:Roboto;
     src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
 }
+nav{
+    font-family:Roboto;
+}
 nav span{
     position:absolute;
     top:17%;
@@ -25,32 +28,32 @@ nav span{
     transition: 0.5s;
 }
 #menu li:first-child:hover~span {
-    width:4.5em;
+    width:4.7em;
     left: 0.5em;
     background: linear-gradient(45deg, #192e4f,#33adff);
 }
 
 #menu li:nth-child(2):hover~span {
-    width:4.5em;
-    left: 6.5em;
+    width:5.1em;
+    left: 6.3em;
     background: linear-gradient(45deg, #192e4f,#33adff);
 }
 
 #menu li:nth-child(3):hover~span {
-    left: 12.2em;
-    width:4.5em;
+    left: 12.6em;
+    width:4em;
     background: linear-gradient(45deg, #192e4f,#33adff);
 }
 
 #menu li:nth-child(4):hover~span {
-    width:5em;
-    left: 18.3em;
+    width:5.6em;
+    left: 18em;
     background: linear-gradient(45deg, #192e4f,#33adff);
 }
 
 #menu li:nth-child(5):hover~span {
-    width:6em;
-    left: 25.2em;
+    width:6.3em;
+    left: 25.5em;
     background: linear-gradient(45deg, #192e4f,#33adff);
 }
 h2 {
@@ -99,7 +102,8 @@ h2 {
     font-family:Roboto;
 }
 #editAvt button:hover{
-    background-color:#3885ff;
+    background-image: linear-gradient(to bottom, #77AAFB, #1250B0);
+    border:none;
 }
 #editprofile{
     display:inline-block;

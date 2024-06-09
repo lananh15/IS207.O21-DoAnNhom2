@@ -60,7 +60,6 @@ main {
     font-size: 2.48vw;
     font-weight: 400;
 }
-
 #top-container h1 {
     position: absolute;
     top: 40%;
@@ -260,9 +259,11 @@ hr{
         left: 0;
         top:255px;
     }
+
     #log-sign {
         right: 0.5vw;
     }
+
 }
 /* Desktop */
 @media screen and (min-width:1024px){

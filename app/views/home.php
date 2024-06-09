@@ -71,7 +71,7 @@
                                     Inside Out (2015) is now available on our website!
         </h3>
         <img src="/IS207.O21-DoAnNhom2/public/images&videos/Home/INSIDEOUT1 2.png">
-        <input type="button" value="Click here" id="watch-btn">
+        <input type="button" value="CLICK HERE" id="watch-btn">
         <div id="award">
             <h2>AWARD</h2>
             <h4>The awards below are for Inside Out (2015)</h4>

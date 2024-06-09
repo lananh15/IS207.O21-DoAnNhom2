@@ -25,7 +25,7 @@
     <main>
         <div id="text-container">
             <h1>We're so joyful to see you!</h1>
-            <a href="watch-animation">Click here to choose your movie</a>
+            <a href="watch-animation">CHOOSE MOVIE</a>
         </div>
         <div id="img-container">
             <img src="/IS207.O21-DoAnNhom2/public/images&videos/Watch/main-watch.gif" alt="">

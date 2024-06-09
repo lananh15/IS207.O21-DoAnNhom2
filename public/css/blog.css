@@ -11,14 +11,12 @@ body{
     font-family:insideout;
     src:url(../../public/font/InsideOut4.otf);
 }
-@font-face{
-    font-family:lora;
-    src:url(../../public/font/blog/Lora-VariableFont_wght.ttf)
-}
+
 @font-face{
     font-family:montserrat;
     src:url(../../public/font/blog/Montserrat-VariableFont_wght.ttf)
 }
+
 @font-face{
     font-family:Roboto;
     src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
@@ -137,9 +135,9 @@ nav span{
     left: 43vw;
     color: #F8F9D1;
     font-size: 3vw;
-    font-family:lora;
+    font-family:montserrat;;
     font-weight:bold;
-    text-transform: Uppercase;
+    text-transform: capitalize;
     text-shadow:
     0.05em 0.05em 0.2em #2d2e2f,
     -0.05em -0.05em 0.2em #2d2e2f;
@@ -218,9 +216,10 @@ nav span{
     border-radius: 0.5vw;
     font-size:1.5vw;
     color: #ECECEC;
-    font-family:montserrat;
+    font-family:Roboto;
     cursor: pointer;
     margin-top:2vw;
+text-transform: uppercase;
 }
 .read-btn:hover{
     background-color:rgba(217, 217, 217, 0.2);
@@ -284,13 +283,14 @@ position: relative;
 #dive-in-more-container h3{
     top: -58vw;
     color: #F8F9D1;
-    font-family: Lora;
+    font-family: Montserrat;
     font-size: 2.2vw;
     font-style: normal;
     font-weight: bold;
     line-height: normal;
     margin-top:2vw;
     position: relative;
+text-transform: capitalize;
 }
 #dive-in-more-container p{
     color: white;
@@ -648,11 +648,11 @@ hr{
     #logo{
         width:6em;
     }
-    #log-sign{
-        right:0.5vw;
+    #log-sign {
+        right: 0.5vw;
     }
-
 }
+ 
 /* Desktop */
 @media screen and (min-width:1024px){
     header{

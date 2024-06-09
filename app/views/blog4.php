@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="vi">
+<?php
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+?>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-...your-integrity-hash-here..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/normalize.css" />
-    <link rel="stylesheet" 
-      href= "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="/IS207.O21-DoAnNhom2/public/css/header.css" />
     <link rel="stylesheet" href="/IS207.O21-DoAnNhom2/public/css/sub-blog.css?v=<?php echo time(); ?>">
     <title>Blog 4</title>
-    <link rel="icon" type="image/x-icon"
-        href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
+    <link rel="icon" type="image/x-icon" href="https://static.wixstatic.com/media/d31d8a_979fb0c69422459691a17a886e4c9c09~mv2.png">
     <script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
+</head>
+
 <body>
-    <?php 
+<?php 
     require_once "header.php"; 
     require_once "../models/PostId.php"; 
     $postDetails = getPost(4);
-    ?>
-    <div id="banner">
-        <?php
-        $select_posts = $conn->prepare("SELECT * FROM posts WHERE status = 'active' AND id=4 ORDER BY date DESC");
-        $select_posts->execute();
-        if ($select_posts->rowCount() > 0) {
-            while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
-                $image_data_base64 = $fetch_posts['imagedata'];
-                if ($image_data_base64 != '') {
-                    $imagedata = base64_decode($image_data_base64);
-                    $image_src = 'data:image/jpeg;base64,' . base64_encode($imagedata);
-                    echo '<img src="' . $image_src . '" class="image" alt="">';
-                }
+
+    // Check if post is deactive
+    if ($postDetails['status'] === 'deactive') {
+        echo '<div id="space">';
+        echo '<h1>OOPS... LOOKS LIKE THIS POST IS STILL UNDER CONSTRUCTION</h1>';
+        echo '</div>';
+    } else {
+?>
+
+<div id="banner">
+    <?php
+    $select_posts = $conn->prepare("SELECT * FROM posts WHERE status = 'active' AND id=4 ORDER BY date DESC");
+    $select_posts->execute();
+    if ($select_posts->rowCount() > 0) {
+        while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
+            $image_data_base64 = $fetch_posts['imagedata'];
+            if ($image_data_base64 != '') {
+                $imagedata = base64_decode($image_data_base64);
+                $image_src = 'data:image/jpeg;base64,' . base64_encode($imagedata);
+                echo '<img src="' . $image_src . '" class="image" alt="">';
             }
         }
-        ?>
-    </div>
-    <div id="Main-content">
-        <h2><?php echo $postDetails['title'] ?></h2>
-       <div id="content" style="white-space: pre-wrap;">
+    }
+    ?>
+</div>
+<div id="Main-content">
+<h2><?php echo htmlspecialchars($postDetails['title']); ?></h2>
+    <div id="content" style="white-space: pre-wrap;">
         <?php echo htmlspecialchars_decode($postDetails['content']); ?>
     </div>
-       <div id="sign">
-            <p id="author"><?php echo $postDetails['author'] ?></p>
-            <?php $formattedDate = date('Y-m-d', strtotime($postDetails['date'])); ?>
-            <p id="date"><?php echo $formattedDate ?></p>
-       </div>
+    <div id="sign">
+        <p id="author">By <?php echo htmlspecialchars($postDetails['author']); ?></p>
+        <?php $formattedDate = date('Y-m-d', strtotime($postDetails['date'])); ?>
+        <p id="date"><?php echo htmlspecialchars($formattedDate); ?></p>
     </div>
-    <br>
-    <hr id="h1">
+</div>
+<br>
+<hr id="h1">
     <div id="comment-container">
         <div id="comment">
             <?php
@@ -61,7 +69,7 @@
                 $comment_counts = $get_comment_count->fetchAll(PDO::FETCH_ASSOC);
                 $comment_count_map = [];
                 foreach ($comment_counts as $count) {
-$comment_count_map[$count['post_id']] = $count['comment_count'];
+                    $comment_count_map[$count['post_id']] = $count['comment_count'];
                 }
                 $current_post_comment_count = isset($comment_count_map[$postDetails['id']]) ? $comment_count_map[$postDetails['id']] : 0;
             ?>
@@ -98,13 +106,18 @@ $comment_count_map[$count['post_id']] = $count['comment_count'];
 
         foreach ($comments as $comment) {
             $avatar_src = get_avatar_src($comment['avatar']);
+            if(isset($comment['date'])){
+                $date = new DateTime($comment['date']);
+                $formattedDate = $date->format('Y-m-d');
+            }
+
             echo '<div class="comment-item">
                     <div class="comment-content">
-                        <img src="' . htmlspecialchars($avatar_src) . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
+                        <img src="' . $avatar_src . '" alt="Avatar" class="comment-avatar" onerror="this.onerror=null; this.src=\'/IS207.O21-DoAnNhom2/public/images&videos/user1.png\';">
                         <div class="comment-details">
                             <span class="comment-username">' . htmlspecialchars($comment['username']) . '</span>
                             <p class="comment-text" style="white-space: pre-wrap;">' . htmlspecialchars($comment['comment']) . '</p>
-                            <span class="comment-timestamp">' . htmlspecialchars($comment['date']) . '</span>
+                            <span class="comment-timestamp">' . htmlspecialchars($formattedDate) . '</span>
                         </div>
                     </div>
                 </div>';
@@ -112,6 +125,11 @@ $comment_count_map[$count['post_id']] = $count['comment_count'];
     ?>
 </div>
 
-    <?php require_once "footer.php"; ?>
+<?php 
+    } // End of else block for active post
+    require_once "footer.php"; 
+?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/IS207.O21-DoAnNhom2/public/js/sub-blog.js"></script>
+</html>

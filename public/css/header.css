@@ -109,7 +109,7 @@ button a{
     color:white;
     padding:10px;
 }
-button:hover{
+#login-signup:hover{
     background-color: #189ffa; 
     cursor: pointer;
     transform:scale(0.9);

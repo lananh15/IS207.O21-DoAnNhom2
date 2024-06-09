@@ -38,7 +38,7 @@
                 <p>Still struggle with capturing the new emotions’ roles?
                   Take a look into this infamous concept called “Secondary emotions” 
                   and how it could be applied in Inside Out 2. </p>      
-                <p> By Muoidiemdoanweb</p>
+                <p> By Vedette</p>
                 <a href="blog1">
                   <input type="button" value="Read more" class="read-btn" id="r1">
                 </a>
@@ -50,11 +50,11 @@
       <div id="feature_2">
           <img src="/IS207.O21-DoAnNhom2/public/images&videos/Blog/feature-blog2.gif">
           <div id="text">
-            <h2>ANXIETY - THE NEW LEADER OF RILEY’S MIND</h2>
-            <p>The next emotion leader in Inside Out 2 was revealed, 
+            <h2>Anxiety - The new leader of Riley's Mind</h2>
+            <p>The next emotion leader in Inside Out 2 was revealed, 
               and the talented Maya Hawke brought her to life. 
               Anxiety is indeed taking over! </p>
-            <p> By Muoidiemdoanweb</p>
+            <p> By FeLLR</p>
             <a href="blog2">
               <input type="button" value="Read more" class="read-btn" id="r2">
             </a>
@@ -67,9 +67,9 @@
   <img src="/IS207.O21-DoAnNhom2/public/images&videos/Blog/long-term-memory.png">
         <div class="dive-column1">
             <img src="/IS207.O21-DoAnNhom2/public/images&videos/Blog/rectangle59.png" class="dive-image">
-            <H3>Meet The New Emotions!</H3>
+            <H3>New Emotions</H3>
             <p>A special look at the four emotions: Anxiety, Envy, Ennui and Embarrassment from 
-                Jason Deamer, production designer on Inside Out 2.</p> 
+                Jason Deamer, production designer on Inside Out 2.</p> 
           <p>By Muoidiemdoanweb</p>
           <a href="blog3">
             <input type="button" value="Read more" class="read-btn">
@@ -87,7 +87,7 @@
         </div>
         <div class="dive-column3">
             <img src="/IS207.O21-DoAnNhom2/public/images&videos/Blog/rectangle61.png" class="dive-image">
-            <H3>Procastination Land</H3>
+            <H3>Procrastination Land</H3>
            <P>One of the director's favorite gags got axed for slowing down the action.
 
             “The joke was that it was always under construction.” - Kelsey Mann</P>

@@ -59,19 +59,18 @@ h1{
 }
 
 #text-container a:hover {
-    background-image: linear-gradient(to right, #FF420C, #E3802D, #F2C130, #5FAD44,
-                                        #34CEBA, #66C2EF, #6960C8, #B379CD, #EB7CC5 );
-    background-clip: text;
-    color: transparent; 
-    transition: color 0.5s;
+    background-color:rgba(217, 217, 217, 0.2);
 }
 
 #text-container a{
     text-decoration: none;
     color: white;
-    font-family: insideout;
+    font-family: Roboto;
     font-weight:normal;
-    font-size: 2vw;  
+    font-size: 1.2vw;  
+    border:1px solid white;
+    padding:0.8vw;
+    border-radius:0.5vw;
 }
 
 #img-container {

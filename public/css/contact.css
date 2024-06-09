@@ -23,6 +23,7 @@ body{
     src: url(../../public/font/Home/Roboto-Regular.ttf);
 }
     
+
 nav{
     font-family: roboto;
 }
@@ -30,7 +31,7 @@ nav span{
     position:absolute;
     top:17%;
     width:6.3em;
-    left: 26.5em;
+    left: 25.5em;
     height:66%;
     background: linear-gradient(45deg, #192e4f,#33adff);
     border-radius: 10px;
@@ -123,6 +124,7 @@ nav span{
     background: linear-gradient(-45deg, transparent, #94b9ff);
     backdrop-filter: blur(2px);
     border-radius: 8px;
+    padding: 0 1.3vw;
 }
 .container .contactInfo .box .text h3{
     font-weight: 500;
@@ -196,6 +198,7 @@ nav span{
     color:#fff;
     font-weight:500;
     font-family: insideout;
+    margin-top:10px;
 }
 .contactForm .inputBox{
     position: relative;
@@ -244,78 +247,6 @@ nav span{
     border:none;
     padding:10px;
     font-size: 18px;
-}
-
-.social{
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column; 
-    padding: 30px 0; 
-}
-.social .content { 
-    text-align: center; 
-    color: #fff; 
-}
-.social .content h2 { 
-    font-size: 3em; 
-    font-weight: 500; 
-    font-family: insideout; 
-}
-.social .content p { 
-    margin-top: 20px; 
-    font-size: 1.2em;
-    font-family: roboto;
-}
-
-.social ul { 
-    position: relative;
-    display: flex; 
-    justify-content: center; 
-    z-index: 2; 
-    padding-left:0;
-}
-.social ul li{
-    position:relative;
-    list-style: none;
-    margin: 10px;
-}
-.social ul li a{
-    position: relative;
-    width:40px;
-    height:40px;
-    display: inline-block;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    background-color:  #94b9ff;
-    border:1px solid rgba(255,255 ,255,0.5);
-    border-right:1px solid rgba(255,255 ,255,0.2);
-    border-bottom:1px solid rgba(255,255 ,255,0.2);
-    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
-    backdrop-filter: blur(2px);
-    transition: 0.5s;
-    overflow: hidden;
-}
-.social ul li a:hover{
-    transform: translateY(-20px);
-}
-.social ul li a::before{
-    content:" ";
-    position:absolute;
-    top:0;
-    left:0;
-    width:50px;
-    height:100%;
-    background: rgba(255,255 ,255,0.5);
-    transform: skewX(45deg) translateX(150px);
-    transition:0.8s;
-}
-.social ul li a:hover::before{
-    transform: skewX(45deg) translateX(-150px);
-
 }
 
 
@@ -481,9 +412,11 @@ hr{
         transform: translateX(-50%);
         top:330px;
     }
+
     #log-sign {
         right: 0.5vw;
     }
+
 }
 /* Desktop */
 @media screen and (min-width:1024px){
@@ -499,6 +432,16 @@ hr{
         flex-direction: column;
     }
     .container .contactInfo{
+        margin-bottom: 30px;
+        
+    }
+    .contact .content h2{
+	font-size:3em;
+	margin-top:30px;
+    }
+}
+@media only screen and (max-width: 430px){
+    .container .contactInfo {
         margin-bottom: 30px;
         margin-right: auto;
     }

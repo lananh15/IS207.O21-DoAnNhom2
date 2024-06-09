@@ -1,3 +1,7 @@
+@font-face{
+    font-family:Roboto;
+    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
+}
 body{
     padding:0;
     margin:0;
@@ -5,11 +9,9 @@ body{
     background-image: url(../../public/images&videos/sao-1.png);
     background-size: cover;
     background-attachment: fixed;
-}
-@font-face{
     font-family:Roboto;
-    src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
 }
+
 nav{
     font-family:Roboto;
 }
@@ -68,10 +70,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight:normal;
 } 
 
 #comming-soon {
-    background-color: red;
+    background-color: rgba(217, 217, 217, 0.2);
     font-weight: 800;
     font-size: 1.4vw;
     text-align: center;
@@ -80,11 +83,12 @@ main {
     bottom: 57.5vw;
     width: 21vw;
     border: 0.05vw solid white;
-    font-family: inknutantiqua;
     height: 4.1vw;
     border-radius: 0.52vw;
     color: white;
     cursor: pointer;
+    font-family: Roboto;
+    font-weight: normal;
 }
 
 #duration {
@@ -142,7 +146,9 @@ svg{
     height: 14.5vw;
     bottom: 44vw;
 }
-
+#description p{
+    font-family:Roboto;
+}
 #cast, #trailer {
     font-family: insideout;
     font-weight: 400;
@@ -394,9 +400,6 @@ hr{
         width:100%;
         left: 0;
         top:100px;
-    }
-    #log-sign {
-        right: 0.5vw;
     }
 }
 

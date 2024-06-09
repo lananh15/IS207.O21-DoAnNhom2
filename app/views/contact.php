@@ -80,19 +80,6 @@
         </div>
     </section>
 
-    <section class="social">
-        <div class="content">
-            <h2>Social Media</h2>
-            <p>Want to get up to date and communicate easier?</p>
-            <p>Follow us on social media</p>    
-        </div>
-        <ul>
-            <li><a href="https://youtube.com/@pixar?si=xeOZohnVZbSNMV5Z"><i class='fa-brands fa-youtube'></i></a></li>
-            <li><a href="https://www.facebook.com/Pixar"><i class='fa-brands fa-facebook-f'></i></a></li>
-            <li><a href="https://www.instagram.com/pixar?igsh=MWx4MWo4bHRlb3Y5MA=="><i class='fa-brands fa-instagram'></i></a></li>
-            <li><a href="https://www.tiktok.com/@pixar?_t=8mHdGfcrKF8&_r=1"><i class='fa-brands fa-tiktok'></i></a></li>
-        </ul>
-    </section>
     
     <?php require_once "footer.php" ?>
 

@@ -153,13 +153,13 @@ hr{
     outline:none;
     border:none;
     font-size:16px;
-    background-color: #33adff;
+    background-color: #13a0ff;
     color:#fff;
     font-weight: 500;
     cursor: pointer;
 }
 #login-btn:hover{
-    background-color: #13a0ff;
+    background-color: #0099ff;
     cursor: url(/IS207.O21-DoAnNhom2/public/images&videos/icons8-cursor-24.png), auto;
 }
 

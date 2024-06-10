@@ -121,14 +121,16 @@ nav span{
     color: #fff;
     flex-direction: column;
     font-weight: 300;
-    background: linear-gradient(-45deg, transparent, #94b9ff);
+    border: 0.5px solid rgba(247, 247, 247, 0.4); 
+    
+    background-color:rgba(217, 217, 217, 0.2) ;
     backdrop-filter: blur(2px);
     border-radius: 8px;
     padding: 0 1.3vw;
 }
 .container .contactInfo .box .text h3{
     font-weight: 500;
-    font-family: roboto;
+    font-family: insideout;
 }
 .container .contactInfo .box .text p{
     font-family:roboto;
@@ -142,19 +144,6 @@ nav span{
     background:#fff;
     border-radius: 8px;
     overflow:hidden;
-}
-.contactForm::before{
-    content:"";
-    position: absolute;
-    top:-50%;
-    left:-50%;
-    width:380px;
-    height:350px;
-    background: linear-gradient(0deg,transparent,
-    transparent,#45f3ff,#45f3ff,#45f3ff);
-    transform-origin: bottom right;
-    z-index:1;
-    animation:animate 6s linear infinite;
 }
 .borderline{
     position: absolute;
@@ -187,11 +176,27 @@ nav span{
     position: absolute;
     z-index: 2;
     inset:4px;
-    background:linear-gradient(45deg,#011D42,#0F2749,#162D4C,#2A3956);
+    background: linear-gradient(45deg, #011D42, #0F2749, #162D4C, #2A3956);
     padding: 40px 40px;
     border-radius: 8px;
 }
-
+.contactForm::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 350px;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    z-index: 1;
+    animation: animate 6s linear infinite;
+}
+.borderline {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
 .contactForm h2
 {
     font-size:30px;
@@ -199,34 +204,65 @@ nav span{
     font-weight:500;
     font-family: insideout;
     margin-top:10px;
+    margin-bottom:15px;
 }
-.contactForm .inputBox{
+
+#row .inputBox{
+    position: relative;
+    width:49%;
+    margin-top: 10px; 
+}
+#message {
     position: relative;
     width:100%;
     margin-top: 10px; 
 }
+#row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .contactForm .inputBox input,
-.contactForm .inputBox textarea{
+#row .inputBox textarea{
     width:100%;
+    height:70%;
     padding:5px 0;
     font-size: 16px;
     margin: 10px 0;
     border: none;
     border-bottom: 2px solid #333;
-    border-radius: 6px;
+    border-radius: 8px;
     outline: none;
     resize:none;
     font-family: roboto;
+    background-color: #4f5c888a;
+    color:white;
+}
+#message textarea{
+    width:100%;
+    height:6.5em;
+    padding:5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    border-radius: 8px;
+    outline: none;
+    resize:none;
+    font-family: roboto;
+    background-color: #4f5c888a;
+    color:white;
+
 }
 .contactForm .inputBox span{
     position:absolute;
     left:0;
-    padding:5px 0;
+    padding:0.7vw;
     font-size: 16px;
-    margin: 10px 0;
+    margin: 15px 0;
     pointer-events: none;
     transition:0.5s;
-    color:#666;
+    color:white;
     font-family: roboto;
 }
 .contactForm .inputBox input:focus ~ span,
@@ -236,19 +272,20 @@ nav span{
     color: white;
     font-weight: 500;
     font-size:12px;
-    transform: translateY(-20px);
+    transform: translateY(-2.2em);
 }
 .contactForm .inputBox input[type="submit"]{
-    width:100px;
-    background:#76a1f1;
+    width:90px;
+    background-color:#76a1f1;
     color:#fff;
     border:none;
     cursor:pointer;
     border:none;
     padding:10px;
-    font-size: 18px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
 }
-
 
 /* Footer */
 footer{
@@ -265,6 +302,7 @@ footer{
     place-items:center;
     border:1px solid white;
     width:96vw;
+    font-family:roboto;
 }
 footer img{
     padding:4vw;
@@ -491,6 +529,7 @@ hr{
     }
     .contactForm .inputBox input,
     .contactForm .inputBox textarea {
+        
         font-size: 14px;
     }
 
@@ -514,5 +553,3 @@ hr{
         margin: 10px 0;
     }
 }
-
-

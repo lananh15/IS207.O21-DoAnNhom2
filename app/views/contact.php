@@ -60,19 +60,21 @@
                 <span class="borderline"></span>
                 <form method = "post" action = "" name = "emailContact">
                     <h2>Drop us a line </h2>
-                    <div class="inputBox">
-                        <input type="text" name ="userName" required="required">
-                        <span>Your Name</span>
+                    <div id="row">
+                        <div class="inputBox">
+                            <input type="text" name ="userName" required="required">
+                            <span>Your Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name ="userEmail" required="required">
+                            <span>Email</span>
+                        </div>
                     </div>
-                    <div class="inputBox">
-                        <input type="text" name ="userEmail" required="required">
-                        <span>Email</span>
-                    </div>
-                    <div class="inputBox">
+                    <div class="inputBox" id="message">
                         <textarea name = "userMessage" required="required"></textarea>
                         <span>Type your Message...</span>
                     </div>
-                    <div class="inputBox">
+                    <div class="inputBox" style="display: grid;place-items: center;">
                         <input type="submit" name="send" value="Send">
                     </div>
                 </form>

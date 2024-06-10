@@ -219,6 +219,11 @@ textarea:hover {
 #send
 {
     left: 69vw;
+    background-image: linear-gradient(to bottom, #77AAFB, #1250B0);
+    border:1px solid #1250B0;
+}
+#send:hover{
+    background-image: linear-gradient(to bottom, #5797ff, #0a4eb5);
 }
 #cancel
 {
@@ -288,6 +293,7 @@ footer{
     place-items:center;
     border:1px solid white;
     width:96vw;
+    font-family: Roboto;
 }
 footer img{
     padding:4vw;

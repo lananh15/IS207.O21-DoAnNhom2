@@ -132,8 +132,12 @@ svg{
     cursor: pointer;
     font-family:Roboto;
     font-weight:normal;
+    transition: all 0.3s ease-in-out;
 }
 
+#watch:hover{
+    transform:scale(0.9);
+}
 
 #movie-info{
     display: grid;

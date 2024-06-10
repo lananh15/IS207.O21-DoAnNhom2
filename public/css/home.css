@@ -394,6 +394,7 @@ footer{
     place-items:center;
     border:1px solid white;
     width:95vw;
+    font-family: Roboto;
 }
 footer img{
     padding:4vw;

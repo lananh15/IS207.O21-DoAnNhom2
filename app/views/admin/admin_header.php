@@ -1,15 +1,16 @@
 <?php
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-   }
+if (isset($message) && is_array($message)) {
+    foreach ($message as $msg) {
+        echo '
+        <div class="message">
+            <span>' . htmlspecialchars($msg, ENT_QUOTES, 'UTF-8') . '</span>
+            <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+        </div>
+        ';
+    }
 }
 ?>
+
 
 <header class="header">
 

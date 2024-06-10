@@ -1,4 +1,4 @@
-@font-face{
+﻿@font-face{
     font-family:Roboto;
     src:url(/IS207.O21-DoAnNhom2/public/font/Home/Roboto-Regular.ttf);
 }
@@ -89,6 +89,10 @@ main {
     cursor: pointer;
     font-family: Roboto;
     font-weight: normal;
+    transition: all 0.3s ease-in-out;
+}
+#comming-soon:hover{
+    transform:scale(0.9);
 }
 
 #duration {
